@@ -1,0 +1,10 @@
+import 'package:crypto/crypto.dart';
+import 'dart:convert';
+
+class Cripty {
+  Cripty._();
+  static String generatedSha256Hash(String password) {
+    final bytes = utf8.encode(password);
+    return sha256.convert(bytes).toString();
+  }
+}

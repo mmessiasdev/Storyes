@@ -4,11 +4,10 @@ import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
 import 'package:shelf_router/shelf_router.dart';
 import 'package:dotenv/dotenv.dart' show load;
-
-import 'app/modules/auth/authcontroller.dart';
+import 'package:storyesapi/app/modules/auth/authcontroller.dart';
 
 // Configure routes.
-final _router = Router()..mount('/auth', AuthController().router);
+final _router = Router()..mount('/auth', Authcontroller().router);
 
 void main(List<String> args) async {
   // Use any available host or container IP (usually `0.0.0.0`).
