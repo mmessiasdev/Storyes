@@ -1,9 +1,10 @@
 
 import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
-import HomePage from '../View/HomePage/HomePage';
-import history from "../Model/History";
-import Login from '../View/Login/Login';
+import HomePage from '../view/homepage/homepage';
+import history from "../model/history";
+import Login from '../view/login/login';
+import Register from '../view/login/register';
 
 
 // ---------- PART RESPONSIBLE FOR MANAGING THE APP'S PAGES ---------- // 
@@ -14,6 +15,7 @@ function RoutesPage() {
         <Router history={history}>
             <Routes>
                 <Route path="/" element={<Login/>} />
+                <Route path="/register" element={<Register/>} />
                 <Route path="/homepage" element={<HomePage/>} />
             </Routes>
 

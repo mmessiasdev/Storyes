@@ -2,7 +2,7 @@ import React from "react";
 import axios from 'axios';
 import { TextField } from "@mui/material";
 
-import './HomePage.css';
+import './homepage.css';
 
 
 // http://localhost:1337/api/products

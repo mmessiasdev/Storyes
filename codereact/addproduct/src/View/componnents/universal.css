@@ -1,0 +1,40 @@
+.header{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    padding-inline: 50px;
+    padding-block: 15px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div .buttonPrimary {
+    background-color: rgba(221, 158, 158, 1);
+    width: 300px;
+    height: 60px;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+div .buttonPrimary:hover {
+    background-color: rgb(248, 75, 75);
+}
+div .buttonSecundary {
+    width: 300px;
+    height: 40px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    box-shadow: none;
+    text-transform: lowercase;
+    background-color: rgba(221, 158, 158, 0.564);
+}
+div .buttonSecundary:hover {
+    background-color: rgba(248, 75, 75, 0.195);
+}
+
+.header img{
+    height: 40px;
+}
