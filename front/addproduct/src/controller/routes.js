@@ -1,37 +1,34 @@
+
 import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
-import HomePage from '../view/pages/homepage/homepage';
+import HomePage from '../view/screens/homepage/homepage';
 import history from "../model/history";
-import Login from '../view/pages/login/login';
-import Register from '../view/pages/login/register';
-import Authcontext from '../services/authcontext';
+import Login from '../view/screens/login/login';
+import Register from '../view/screens/login/register';
+import AdminPage from '../view/screens/admin/admin';
+import AuthContext from '../services/authcontext';
 import authapi from '../services/authapi';
-import PrivateRoute from '../view/componnents/privateroutes';
-import ProdAddPage from '../view/pages/addproducts/paddpage';
-import { useState } from 'react';
+import React, {useState} from 'react';
 
 
 // ---------- PART RESPONSIBLE FOR MANAGING THE APP'S PAGES ---------- // 
 
 function RoutesPage() {
-
-    const [isAuthenticated, setisAuthenticated] = useState(authapi.authenticate)
-
-
+    const [isAuthenticated, setIsAuthenticated] = useState(authapi.isAuthenticated)
 
     return (
-        <Authcontext.Provider value={{isAuthenticated, setisAuthenticated}}>
+        <AuthContext.Provider value={{isAuthenticated, setIsAuthenticated}}>
             <Router history={history}>
                 <Routes>
                     <Route path="/" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/homepage" element={<HomePage />} />
-                    <PrivateRoute path="/addproduct" element={<ProdAddPage/>}/>
+                    <Route path="/admin" element={<AdminPage />} />
                 </Routes>
 
             </Router>
 
-        </Authcontext.Provider>
+        </AuthContext.Provider>
 
     )
 }

@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './login.css'
 import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
-import authApi from "../../services/authapi";
-import logo from "../assets/logo.png";
+import authApi from "../../../services/authapi";
+import logo from "../../assets/logo.png";
+import AuthContext from "../../../services/authcontext";
+import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
+
+    const history = useNavigate();
+    const {setIsAuthenticated} = useContext(AuthContext);
 
     const [credentials, setCredentials] = useState({
         identifier: "",
@@ -26,6 +31,8 @@ const Login = () => {
         event.preventDefault();
         try {
             await authApi.authenticate(credentials);
+            setIsAuthenticated(true)
+            history("admin");
         } catch (error) {
             console.log(error);
         }

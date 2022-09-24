@@ -1,1 +1,0 @@
-class Emailregistered implements Exception {}
