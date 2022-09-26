@@ -65,7 +65,15 @@ form .buttonCont {
     padding-block: 30px;
 }
 
+.link .buttonSecundary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    text-decoration-line: none;
 
+}
 
 
 /* ------ Responsive Container ------ */

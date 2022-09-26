@@ -1,17 +1,17 @@
 import React, { useContext, useState } from "react";
-import './login.css'
+import '../../view/screens/login/login.css'
 import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
-import authApi from "../../../services/authapi";
-import logo from "../../assets/logo.png";
-import AuthContext from "../../../services/authcontext";
-import { useNavigate } from "react-router-dom";
+import authApi from "../../services/authapi";
+import logo from "../assets/logo.png";
+import AuthContext from "../../services/authcontext";
+import { Link, useNavigate, redirect } from "react-router-dom";
 
 
 const Login = () => {
 
     const history = useNavigate();
-    const {setIsAuthenticated} = useContext(AuthContext);
+    const { setIsAuthenticated } = useContext(AuthContext);
 
     const [credentials, setCredentials] = useState({
         identifier: "",
@@ -36,16 +36,7 @@ const Login = () => {
         } catch (error) {
             console.log(error);
         }
-
     }
-
-
-    // const getUsers = async () => {
-    //     const { data } = await axios.post('http://localhost:1337/api/auth/local', {
-
-    //     });
-    // }
-
 
     return (
         <>
@@ -54,9 +45,14 @@ const Login = () => {
                     <img src={logo} />
                 </div>
                 <div className="right">
-                    <Button className="buttonSecundary" variant="contained" type="submit">
-                        Register
-                    </Button>
+                    <Link to="/register" className="link">
+                        <Button className="buttonSecundary" variant="contained" type="submit">
+
+                            register
+
+                        </Button>
+                    </Link>
+
                 </div>
 
 
