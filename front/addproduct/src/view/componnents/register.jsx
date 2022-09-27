@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import AuthContext from "../../services/authcontext";
-import authApi from "../../services/authapi";
+import { URLREGISTER } from "../../model/config";
 
 
 
@@ -14,33 +14,45 @@ import authApi from "../../services/authapi";
 const Register = () => {
 
     const history = useNavigate();
-    const { setIsAuthenticated } = useContext(AuthContext);
 
     const [credentialsRegister, setcredentialsRegister] = useState({
-        username: "",
-        email: "",
-        password: "",
+        username: '',
+        email: '',
+        password: '',
     })
 
-    const handleChangeInput = ({ currentTarget }) => {
-        console.log(currentTarget)
-        const { value, name } = currentTarget
-        setcredentialsRegister({
-            ...credentialsRegister,
-            [name]: value
-        })
-    }
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            await authApi.authRegister(credentialsRegister);
-            setIsAuthenticated(true)
-            history("admin");
-        } catch (error) {
-            console.log(error);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try{
+            const response = await fetch(
+                `${URLREGISTER}`, {
+                    headers : {
+                        'Content-Type' : 'application/json',
+                    },
+                    body : JSON.stringify({
+                        email: credentialsRegister.email,
+                        username: credentialsRegister.username,
+                        password: credentialsRegister.password,
+                    }),
+                    method: 'POST',
+                }
+            );
+            const data = await response.json();
+            console.log(data)
+            history("/login");
+            
+        }
+        catch (error){
+            console.error(error);
+
         }
     }
-
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setcredentialsRegister({
+            ...credentialsRegister, [name]: value 
+        });
+    }
 
     return (
         <>
@@ -68,14 +80,14 @@ const Register = () => {
                     </h1>
                     <form onSubmit={handleSubmit}>
                         <div className="formCont">
-                            <div> <TextField onChange={handleChangeInput} className="input" id="username" label="Username" type="text" name="identifier" variant="filled" /></div>
-                            <div> <TextField onChange={handleChangeInput} className="input" id="email" label="Email" type="text" name="email" variant="filled" /></div>
-                            <div> <TextField onChange={handleChangeInput} className="input" id="password" label="Password" type="text" name="password" variant="filled" /></div>
+                            <div> <TextField onChange={handleChange} className="input" id="username" label="Username" type="text" name="username" variant="filled" /></div>
+                            <div> <TextField onChange={handleChange} className="input" id="email" label="Email" type="text" name="email" variant="filled" /></div>
+                            <div> <TextField onChange={handleChange} className="input" id="password" label="Password" type="password" name="password" variant="filled" /></div>
 
                         </div>
                         <div className="buttonCont">
                             <Button className="buttonPrimary" variant="contained" type="submit">
-                                LOGIN
+                                REGISTER
                             </Button>
                         </div>
                     </form>

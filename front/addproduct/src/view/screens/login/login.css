@@ -37,6 +37,14 @@
     width: 65%;
 }
 
+.login form{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 form .input {
     background-color: rgb(255, 251, 251);
     width: 300px;
@@ -46,7 +54,6 @@ form .input {
 }
 
 form .buttonCont {
-    width: 500px;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
@@ -65,6 +72,12 @@ form .buttonCont {
     padding-block: 30px;
 }
 
+.formCont div input{
+    display: flex;
+    align-items: center;
+    background-color: rgba(217, 217, 217, 1);
+}
+
 .link .buttonSecundary{
     display: flex;
     justify-content: center;
@@ -72,7 +85,12 @@ form .buttonCont {
     text-decoration: none;
     color: white;
     text-decoration-line: none;
-
+}
+.buttonCont .buttonPrimary {
+    width: 500px;
+}
+.link{
+    text-decoration-line: none;
 }
 
 
@@ -96,19 +114,18 @@ form .buttonCont {
         width: 200px;
         font-family: 'Montserrat', sans-serif;
     }
+    .login .formCont {
+        width: 80vw;
+        border-radius: 10px;
+    }
 
     form .buttonCont {
         margin-top: 40px;
         display: flex;
         flex-direction: column;
     }
-
-    .login .formCont {
-        width: 280px;
-
-    }
-    div .buttonPrimary {
-        width: 280px;
+    .buttonCont .buttonPrimary {
+        width: 80vw;
     }
     div .buttonSecundary {
         width: 280px;

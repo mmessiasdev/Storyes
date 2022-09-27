@@ -19,7 +19,6 @@ const Login = () => {
     });
 
     const handleChangeInput = ({ currentTarget }) => {
-        console.log(currentTarget)
         const { value, name } = currentTarget
         setCredentials({
             ...credentials,
@@ -45,14 +44,14 @@ const Login = () => {
                     <img src={logo} />
                 </div>
                 <div className="right">
-                    <Link to="/register" className="link">
+                <Link to="/register" className="link">
                         <Button className="buttonSecundary" variant="contained" type="submit">
 
                             register
 
                         </Button>
                     </Link>
-
+                    
                 </div>
 
 
@@ -68,7 +67,7 @@ const Login = () => {
                             <div>
                                 <TextField onChange={handleChangeInput} className="input" id="identifier" label="Username" type="text" name="identifier" variant="filled" />
                             </div>
-                            <div> <TextField onChange={handleChangeInput} className="input" id="password" label="Password" type="text" name="password" variant="filled" /></div>
+                            <div> <TextField onChange={handleChangeInput} className="input" id="password" label="Password" type="password" name="password" variant="filled" /></div>
 
                         </div>
                         <div className="buttonCont">

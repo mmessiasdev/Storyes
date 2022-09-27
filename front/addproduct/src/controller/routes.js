@@ -20,7 +20,7 @@ function RoutesPage() {
         <AuthContext.Provider value={{isAuthenticated, setIsAuthenticated}}>
             <Router history={history}>
                 <Routes>
-                    <Route path="/" element={<Login />} />
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/homepage" element={<HomePage />} />

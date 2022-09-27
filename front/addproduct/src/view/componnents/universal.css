@@ -38,3 +38,14 @@ div .buttonSecundary:hover {
 .header img{
     height: 40px;
 }
+
+
+
+
+
+
+@media (max-width: 920px) {
+    div .buttonSecundary {
+        width: 200px;
+    }
+}

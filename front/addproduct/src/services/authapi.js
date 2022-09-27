@@ -12,11 +12,9 @@ function authenticate(credentials){
         console.log(isAuthenticated())
     })
 }
-function authRegister(credentials){
-    return axios.post(URLREGISTER, credentials).then(res => res.data).then(data => {
-        axios.defaults.headers["Authorization"] = "Bearer" + data.jwt
+function authRegister(credentialsRegister){
+    return axios.post(URLREGISTER, credentialsRegister).then(res => res.data).then(data => {
         console.log(data);
-        console.log(isAuthenticated())
     })
 }
 function isAuthenticated(){
