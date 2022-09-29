@@ -30,7 +30,7 @@ function isAuthenticated(){
 }
 
 
-
+    
 export default{
     authRegister,
     isAuthenticated,

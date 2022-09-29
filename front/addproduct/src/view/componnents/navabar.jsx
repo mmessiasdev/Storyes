@@ -5,13 +5,13 @@ const NavBar = () => {
 
     return(
         <nav>
-            <Link>
+            <Link  >
             </Link>
             
             <Link>
             </Link>
             
-            <Link>
+            <Link>  
             </Link>
             
         </nav>

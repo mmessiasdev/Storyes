@@ -1,0 +1,15 @@
+.stories{
+    align-items: center;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.stories .circle{
+    background-color: rgba(251, 207, 207, 1);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: 25px;
+}

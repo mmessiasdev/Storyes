@@ -42,7 +42,7 @@ div .buttonSecundary:hover {
 
 
 
-
+/* ------ Responsive Container ------ */
 
 @media (max-width: 920px) {
     div .buttonSecundary {

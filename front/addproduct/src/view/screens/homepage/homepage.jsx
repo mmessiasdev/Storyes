@@ -1,7 +1,7 @@
 import React from "react";
-
+import Header from "../../componnents/header/header";
+import Stories from "../../componnents/stories/stories";
 import './homepage.css';
-
 
 // http://localhost:1337/api/products
 // http://localhost:1337/api/auth/local
@@ -9,12 +9,19 @@ import './homepage.css';
 
 
 const HomePage = () => {
-
-
-
     return (
         <>
             <div className="homepage">
+                <Header />
+                <div className="content">
+                    <div className="left">
+                        <Stories />
+                    </div>
+                    <div className="right">
+
+                    </div>
+
+                </div>
             </div>
         </>
     )
