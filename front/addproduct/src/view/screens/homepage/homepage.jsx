@@ -1,4 +1,6 @@
 import React from "react";
+import Apresentation from "../../componnents/apresentation/apresentation";
+import ForYou from "../../componnents/foryou/foryou";
 import Header from "../../componnents/header/header";
 import Stories from "../../componnents/stories/stories";
 import './homepage.css';
@@ -12,14 +14,15 @@ const HomePage = () => {
     return (
         <>
             <div className="homepage">
-                <Header />
-                <div className="content">
-                    <div className="left">
-                        <Stories />
-                    </div>
-                    <div className="right">
-
-                    </div>
+                <div className="menu">
+                    <Header />
+                </div>
+                <div className="left">
+                    <Stories />
+                    <Apresentation/>
+                    <ForYou/>
+                </div>
+                <div className="right">
 
                 </div>
             </div>

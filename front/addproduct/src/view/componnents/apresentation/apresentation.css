@@ -1,0 +1,92 @@
+.apresentation{
+    margin-top: 50px;
+    width: 100%;
+    padding-left: 50px;
+}
+
+.apresentation .list{
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    overflow-x: scroll;
+    grid-template-columns: 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px;
+    grid-template-rows: 200px;
+}
+.apresentation .list .product{
+    width: 350px;
+    height: 180px;
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: 120px 200px;
+
+}
+
+
+.photo{
+    width: 120px;
+    height:180px;
+    border-radius: 20px;
+    background-color: rgb(186, 196, 196);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.info h5{
+    height:35px;
+    overflow:hidden;
+}
+
+.info h2{
+    display: flex;
+    justify-content: end;
+}
+.info h4{
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+    font-style:oblique;
+}
+
+.info *{
+    width: 100%;
+}
+
+
+
+
+
+
+@media (max-width: 500px) {
+    .apresentation{
+        padding-left: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.apresentation .list::-webkit-scrollbar {
+    height: 2px;
+  }
+  .apresentation .list::-webkit-scrollbar-thumb {
+    background-color: #ff7171;
+    border-radius: 15px;
+  }
+  .apresentation .list::-webkit-scrollbar-track {
+    background-color: #e1e1e1;
+  }

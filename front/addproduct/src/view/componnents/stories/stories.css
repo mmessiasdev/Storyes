@@ -1,9 +1,16 @@
 .stories{
     align-items: center;
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    display: grid;
+    overflow-x: auto;
     position: relative;
+    margin-top: 20px;
+    width: 100%;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px;
+    -ms-grid-row-align: center;
+    -ms-grid-column-align: center;
+    padding-left: 25px;
+    
 }
 
 .stories .circle{
@@ -11,5 +18,23 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-left: 25px;
+}
+
+.stories::-webkit-scrollbar {
+    height: 0px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #737373;
+    border-radius: 15px;
+  }
+  *::-webkit-scrollbar-track {
+    background-color: #1f1d1d;
+  }
+
+
+  @media (max-width: 500px) {
+    .stories{
+        padding-left: 10px;
+        
+    }
 }

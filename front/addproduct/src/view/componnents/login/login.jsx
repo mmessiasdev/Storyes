@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import '../../view/screens/login/login.css'
+import './login.css'
 import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
-import authApi from "../../services/authapi";
-import logo from "../assets/logo.png";
-import AuthContext from "../../services/authcontext";
+import authApi from "../../../services/authapi";
+import logo from "../../assets/logo.png";
+import AuthContext from "../../../services/authcontext";
 import { Link, useNavigate, redirect } from "react-router-dom";
 
 

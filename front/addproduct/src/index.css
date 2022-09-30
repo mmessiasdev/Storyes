@@ -1,12 +1,5 @@
 /* ---------- CSS Presets ------------- */
 
-#root{
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
 
 
 * {
@@ -50,7 +43,7 @@ h3{
 h4{
   color: #000000;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 200;
 }
 h5{

@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
 import HomePage from '../view/screens/homepage/homepage';
 import history from "../model/history";
-import Login from '../view/componnents/login';
-import Register from '../view/componnents/register';
+import Login from '../view/componnents/login/login';
+import Register from '../view/componnents/login/register';
 import AdminPage from '../view/screens/admin/admin';
 import AuthContext from '../services/authcontext';
 import authapi from '../services/authapi';
