@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+
+
+/* ------ Text Container ------ */
+
 .aboutus .text{
     width: 75%;
 
@@ -24,6 +28,11 @@
     padding-left: 65px;
 }
 
+
+
+
+/* ------ Image Container ------ */
+
 .aboutus .image{
     display: flex;
     justify-content: start;
@@ -35,14 +44,18 @@
     border-radius: 50%;
 }
 
+
+
+
+
+/* ------ Responsive Container ------ */
+
+
 @media (max-width: 900px) {
     .aboutus .text{
         padding-right: 50px;    
     }
 }
-
-
-
 @media (max-width: 770px) {
     .aboutus{
         flex-direction: column;
