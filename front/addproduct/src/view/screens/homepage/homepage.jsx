@@ -1,7 +1,9 @@
 import React from "react";
+import AboutUs from "../../componnents/aboutus/aboutus";
 import Apresentation from "../../componnents/apresentation/apresentation";
 import ForYou from "../../componnents/foryou/foryou";
 import Header from "../../componnents/header/header";
+import SideBar from "../../componnents/sidebar/sidebar";
 import Stories from "../../componnents/stories/stories";
 import './homepage.css';
 
@@ -17,12 +19,16 @@ const HomePage = () => {
                 <div className="menu">
                     <Header />
                 </div>
-                <div className="left">
-                    <Stories />
-                    <Apresentation/>
-                    <ForYou/>
-                </div>
-                <div className="right">
+                <div className="centralpage">
+                    <div className="left">
+                        <Stories />
+                        <Apresentation />   
+                        <ForYou />
+                        <AboutUs/>
+                    </div>
+                    <div className="right">
+                        <SideBar />
+                    </div>
 
                 </div>
             </div>

@@ -19,11 +19,19 @@
 }
 
 .left{
+    padding-left: 50px;
     width: 70vw;
 }
+
 .right{
     width: 30vw;
 }
+
+.centralpage{
+    display: flex;
+    }
+
+
 
 
 
@@ -37,3 +45,10 @@
     }
 }
 
+
+
+@media (max-width: 500px) {
+    .left{
+        padding-left: 10px;
+    }
+}

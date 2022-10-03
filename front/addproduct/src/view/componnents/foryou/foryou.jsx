@@ -4,7 +4,7 @@ import './foryou.css'
 const ForYou = () => {
     return (
         <>
-            <div className="foryou">
+            <div className="foryou" id="foryou">
                 <div className="title">
                     <h2>For You</h2>
                 </div>
