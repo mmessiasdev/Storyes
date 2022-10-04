@@ -1,6 +1,7 @@
 import React from "react";
 import AboutUs from "../../componnents/aboutus/aboutus";
 import Apresentation from "../../componnents/apresentation/apresentation";
+import Footer from "../../componnents/footer/footer";
 import ForYou from "../../componnents/foryou/foryou";
 import Header from "../../componnents/header/header";
 import SideBar from "../../componnents/sidebar/sidebar";
@@ -30,6 +31,9 @@ const HomePage = () => {
                         <SideBar />
                     </div>
 
+                </div>
+                <div>
+                    <Footer/>
                 </div>
             </div>
         </>

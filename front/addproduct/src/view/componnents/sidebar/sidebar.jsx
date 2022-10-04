@@ -11,7 +11,7 @@ const SideBar = () => {
                     <a href="#apresentation"><h2>- Popular</h2></a>
                     <a href="#foryou"><h2>- For You</h2></a>
                     <a href="#aboutus"><h2>- About us</h2></a>
-                    <a href="/"><h2>- Footer</h2></a>
+                    <a href="#footer"><h2>- Footer</h2></a>
                 </div>
             </div>
         </>
