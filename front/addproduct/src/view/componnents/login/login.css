@@ -89,6 +89,8 @@ form .buttonCont {
     width: 500px;
 }
 .link{
+    display: flex;
+    justify-content: end;
     text-decoration-line: none;
 }
 

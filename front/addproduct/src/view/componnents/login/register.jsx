@@ -4,8 +4,6 @@ import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import logo from "../../assets/logo.png";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
-import AuthContext from "../../../services/authcontext";
 import { URLREGISTER } from "../../../model/config";
 
 

@@ -52,6 +52,7 @@
     overflow:hidden;
 }
 .info h2{
+    color: black;
     display: flex;
     justify-content: end;
 }
@@ -60,6 +61,10 @@
     display: flex;
     justify-content: end;
     font-style:oblique;
+}
+.info h3{
+    overflow: hidden;
+    max-height:55px;
 }
 .info *{
     width: 100%;

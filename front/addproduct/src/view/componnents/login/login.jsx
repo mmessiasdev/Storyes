@@ -31,7 +31,7 @@ const Login = () => {
         try {
             await authApi.authenticate(credentials);
             setIsAuthenticated(true)
-            history("admin");
+            history("/homepage");
         } catch (error) {
             console.log(error);
         }
