@@ -133,6 +133,8 @@
 }
 @media (max-width: 500px) {
     .foryou {
-        padding-left: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
+
 }

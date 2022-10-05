@@ -6,6 +6,7 @@ import authApi from "../../../services/authapi";
 import logo from "../../assets/logo.png";
 import AuthContext from "../../../services/authcontext";
 import { Link, useNavigate, redirect } from "react-router-dom";
+import { BiLogIn } from "react-icons/bi";
 
 
 const Login = () => {
@@ -31,7 +32,7 @@ const Login = () => {
         try {
             await authApi.authenticate(credentials);
             setIsAuthenticated(true)
-            history("/homepage");
+            history("/login/auth");
         } catch (error) {
             console.log(error);
         }
@@ -39,19 +40,24 @@ const Login = () => {
 
     return (
         <>
-            <div className="header">
+            <div className="header" id="headerLogin">
                 <div className="left">
-                    <img src={logo} />
+                    <Link to="/homepage" className="linkStart">
+                        <img src={logo} />
+                        <h1>Storyes</h1>
+
+                    </Link>
                 </div>
                 <div className="right">
-                <Link to="/register" className="link">
+                    <Link to="/register" className="link">
                         <Button className="buttonSecundary" variant="contained" type="submit">
+                            <BiLogIn/>
 
-                            register
+                            <h2>register</h2>
 
                         </Button>
                     </Link>
-                    
+
                 </div>
 
 

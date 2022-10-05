@@ -19,6 +19,10 @@ div .buttonSecundary {
     text-transform: lowercase;
     background-color: rgba(221, 158, 158, 0.564);
 }
+div .buttonSecundary h2{
+    margin-left: 10px;
+    color: white;
+}
 div .buttonSecundary:hover {
     background-color: rgba(248, 75, 75, 0.195);
 }

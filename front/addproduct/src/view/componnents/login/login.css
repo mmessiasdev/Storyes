@@ -1,5 +1,6 @@
 .fullscreen {
     display: flex;
+    justify-content: center;
     background-color: rgba(251, 207, 207, 1);
 }
 
@@ -36,7 +37,7 @@
     width: 65%;
 }
 
-.login form{
+.login form {
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -53,7 +54,7 @@ form .input {
 }
 
 form .buttonCont {
-    margin-top: 40px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,13 +72,13 @@ form .buttonCont {
     padding-block: 30px;
 }
 
-.formCont div input{
+.formCont div input {
     display: flex;
     align-items: center;
     background-color: rgba(217, 217, 217, 1);
 }
 
-.link .buttonSecundary{
+.link .buttonSecundary {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,13 +86,37 @@ form .buttonCont {
     color: white;
     text-decoration-line: none;
 }
+
 .buttonCont .buttonPrimary {
     width: 500px;
 }
-.link{
+
+.link {
     display: flex;
     justify-content: end;
     text-decoration-line: none;
+}
+
+.linkStart {
+    display: flex;
+    justify-content: start;
+    text-decoration-line: none;
+    align-items: center;
+}
+
+.linkStart h1 {
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+.header .left {
+    padding-left: 0px;
+}
+
+#headerLogin {
+    position: fixed;
+    z-index: 10;
+    background-color: white;
 }
 
 
@@ -115,19 +140,22 @@ form .buttonCont {
         width: 200px;
         font-family: 'Montserrat', sans-serif;
     }
+
     .login .formCont {
         width: 80vw;
-        border-radius: 10px;
+        border-radius: 10px 10px 0px 0px;
     }
 
     form .buttonCont {
-        margin-top: 40px;
+        margin-top: 0px;
         display: flex;
         flex-direction: column;
     }
+
     .buttonCont .buttonPrimary {
         width: 80vw;
     }
+
     div .buttonSecundary {
         width: 280px;
     }

@@ -7,7 +7,7 @@ const ForYou = () => {
         <>
             <div className="foryou" id="foryou">
                 <div className="title">
-                    <h2>For You</h2>
+                    <h2>Bests</h2>
                 </div>
                 <div className="list">
                     <ProdApres />

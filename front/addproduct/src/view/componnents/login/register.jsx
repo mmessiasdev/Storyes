@@ -21,34 +21,34 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
+        try {
             const response = await fetch(
                 `${URLREGISTER}`, {
-                    headers : {
-                        'Content-Type' : 'application/json',
-                    },
-                    body : JSON.stringify({
-                        email: credentialsRegister.email,
-                        username: credentialsRegister.username,
-                        password: credentialsRegister.password,
-                    }),
-                    method: 'POST',
-                }
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: credentialsRegister.email,
+                    username: credentialsRegister.username,
+                    password: credentialsRegister.password,
+                }),
+                method: 'POST',
+            }
             );
             const data = await response.json();
             console.log(data)
             history("/login");
-            
+
         }
-        catch (error){
+        catch (error) {
             console.error(error);
 
         }
     }
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setcredentialsRegister({
-            ...credentialsRegister, [name]: value 
+            ...credentialsRegister, [name]: value
         });
     }
 
@@ -56,7 +56,11 @@ const Register = () => {
         <>
             <div className="header">
                 <div className="left">
-                    <img src={logo} />
+                    <Link to="/homepage" className="linkStart">
+                        <img src={logo} />
+                        <h1>Storyes</h1>
+
+                    </Link>
                 </div>
                 <div className="right">
                     <Link to="/login" className="link">
