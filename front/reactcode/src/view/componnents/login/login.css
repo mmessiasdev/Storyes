@@ -1,0 +1,162 @@
+.fullscreen {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(251, 207, 207, 1);
+}
+
+
+
+
+
+/* ------ Wallpaper Container ------ */
+
+.fullscreen .image {
+    width: 35%;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    opacity: 30%;
+}
+
+.fullscreen .image img {
+    object-fit: cover;
+}
+
+
+
+
+
+/* ------ Login Container ------ */
+
+.login {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+}
+
+.login form {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+form .input {
+    background-color: rgb(255, 251, 251);
+    width: 300px;
+    font-family: 'Montserrat', sans-serif;
+    margin-block: 10px;
+    font-size: 16px;
+}
+
+form .buttonCont {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .formCont {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 500px;
+    margin-top: 30px;
+    padding-block: 30px;
+}
+
+.formCont div input {
+    display: flex;
+    align-items: center;
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.link .buttonSecundary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    text-decoration-line: none;
+}
+
+.buttonCont .buttonPrimary {
+    width: 500px;
+}
+
+.link {
+    display: flex;
+    justify-content: end;
+    text-decoration-line: none;
+}
+
+.linkStart {
+    display: flex;
+    justify-content: start;
+    text-decoration-line: none;
+    align-items: center;
+}
+
+.linkStart h1 {
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+.header .left {
+    padding-left: 0px;
+}
+
+#headerLogin {
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+}
+
+
+/* ------ Responsive Container ------ */
+
+@media (max-width: 920px) {
+    .fullscreen .image {
+        display: none;
+    }
+
+    .login {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 540px) {
+
+    form .input {
+        background-color: rgb(255, 251, 251);
+        width: 200px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .login .formCont {
+        width: 80vw;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    form .buttonCont {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttonCont .buttonPrimary {
+        width: 80vw;
+    }
+
+    div .buttonSecundary {
+        width: 280px;
+    }
+}

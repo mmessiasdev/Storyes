@@ -1,0 +1,60 @@
+div .addp{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.addp .right{
+    background-color: rgb(254, 237, 237);
+    width: 40%;
+}
+.addp .left{
+    background-color: rgba(251, 207, 207, 1);
+    width: 60%;
+    padding-inline: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    padding-block: 40px;
+    min-height: 100vh;
+}
+
+
+.inputs .input{
+    justify-content: end;
+    display: flex;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 400px;
+}
+
+.left .inputs{
+    margin-top: 50px;
+}
+
+.addp .left h1{
+    color: white;
+}
+
+.addp .sentphoto{
+    background-color: white;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.addp .inputs .registerbutton{
+    background-color: rgba(36, 255, 0, 1);
+    border-radius: 2px;
+    width: 100%;
+    padding-inline: 20px;
+    
+}
+.addp .linkStart{
+    margin-top: 75px;
+    color: white;
+}

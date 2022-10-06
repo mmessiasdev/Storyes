@@ -1,0 +1,92 @@
+.apresentation{
+    margin-top: 50px;
+    width: 100%;
+}
+
+
+
+/* ------ List Container ------ */
+
+.apresentation .list{
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    overflow-x: scroll;
+    grid-template-columns: 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px;
+    grid-template-rows: 200px;
+}
+.apresentation .list .product{
+    width: 350px;
+    height: 180px;
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: 120px 200px;
+
+}
+
+
+
+
+/* ------ Photo Container ------ */
+
+.photo{
+    width: 120px;
+    height:180px;
+    border-radius: 20px;
+    background-color: rgb(186, 196, 196);
+}
+
+
+
+
+/* ------ Text Container ------ */
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+.info h5{
+    height:35px;
+    overflow:hidden;
+}
+.info h2{
+    color: black;
+    display: flex;
+    justify-content: end;
+}
+.info h4{
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+    font-style:oblique;
+}
+.info h3{
+    overflow: hidden;
+    max-height:55px;
+}
+.info *{
+    width: 100%;
+}
+
+
+
+
+/* ------ Scroll Bar Container ------ */
+
+.apresentation .list::-webkit-scrollbar {
+    height: 4px;
+    width: 10px;
+}
+
+.apresentation .list::-webkit-scrollbar-thumb {
+    background-color: #ff7171;
+    border-radius: 15px;
+}
+
+.apresentation .list::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+

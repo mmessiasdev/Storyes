@@ -1,0 +1,140 @@
+.foryou {
+    margin-top: 50px;
+    width: 100%;
+}
+
+
+
+
+/* ------ List Container ------ */
+
+.foryou .list {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    overflow-x: scroll;
+    grid-column: auto;
+    grid-area: auto;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 350px);
+    overflow: auto;
+}
+
+.foryou .list .product {
+    width: 350px;
+    height: 180px;
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 120px 200px;
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 20px;
+
+}
+
+
+
+
+/* ------ Image Container ------ */
+
+.foryou .photo {
+    width: 120px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 20px 0px 20px 20px;
+    background-color: rgba(221, 158, 158, 1);
+}
+
+
+
+
+/* ------ Text Container ------ */
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+.info h5 {
+    height: 35px;
+    overflow: hidden;
+}
+.info h2 {
+    display: flex;
+    justify-content: end;
+}
+.info h4 {
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+    font-style: oblique;
+}
+.info * {
+    width: 100%;
+}
+
+
+
+
+/* ------ Scroll Bar Container ------ */
+
+.foryou .list::-webkit-scrollbar {
+    height: 4px;
+    width: 10px;
+}
+
+.foryou .list::-webkit-scrollbar-thumb {
+    background-color: #ff7171;
+    border-radius: 15px;
+}
+
+.foryou .list::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+
+
+
+
+
+/* ------ Responsive Container ------ */
+
+
+@media (min-width: 2700px) {
+    .foryou .list {
+        grid-template-columns: repeat(5, 350px);
+    }
+}
+@media (max-width: 2700px) {
+    .foryou .list {
+        grid-template-columns: repeat(5, 350px);
+    }
+}
+@media (max-width: 2500px) {
+    .foryou .list {
+        grid-template-columns: repeat(4, 350px);
+    }
+}
+@media (max-width: 2030px) {
+    .foryou .list {
+        grid-template-columns: repeat(3, 350px);
+    }
+}
+@media (max-width: 1550px) {
+    .foryou .list {
+        justify-content: space-around;
+        grid-template-columns: repeat(2, 350px);
+    }
+}
+@media (max-width: 1090px) {
+    .foryou .list {
+        grid-template-columns: repeat(1, 350px);
+    }
+}
+@media (max-width: 500px) {
+    .foryou {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+}
