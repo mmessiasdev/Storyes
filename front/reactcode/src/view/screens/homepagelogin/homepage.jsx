@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AboutUs from "../../componnents/aboutus/aboutus";
 import Apresentation from "../../componnents/apresentation/apresentation";
 import Footer from "../../componnents/footer/footer";
@@ -18,6 +18,8 @@ import { Button } from "@mui/material";
 
 
 const HomePage = () => {
+    const [showElement, setShowElement] = useState(false)
+    const showOrHide = () => setShowElement(true);
     return (
         <>
             <div className="homepage">
@@ -29,14 +31,18 @@ const HomePage = () => {
                         </div>
                         <div className="account">
 
-                            <Link to="/login" className="link">
+                            <Link to="/auth" className="link">
                                 <Button className="buttonSecundary" variant="contained" type="submit">
-                                 
-                                    <BiLogOut className="icon"/>
+
+                                    <BiLogOut className="icon" />
                                     <h2>Sair</h2>
 
                                 </Button>
                             </Link>
+                            {/* <div>
+                                <button onClick={showOrHide}>Clique em mim</button>
+                                {showElement ? <p>Tô aqui</p> : null}
+                            </div> */}
 
 
                         </div>

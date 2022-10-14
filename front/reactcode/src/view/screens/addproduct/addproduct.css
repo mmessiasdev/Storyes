@@ -58,3 +58,8 @@ div .addp{
     margin-top: 75px;
     color: white;
 }
+
+.addp .sentphoto input{
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}

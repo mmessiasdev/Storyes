@@ -1,4 +1,6 @@
-import React from "react";
+import axios from "axios";
+import React, { Component, useEffect, useState } from "react";
+import api from "../../../services/baseapi";
 import AboutUs from "../../componnents/aboutus/aboutus";
 import Apresentation from "../../componnents/apresentation/apresentation";
 import Footer from "../../componnents/footer/footer";
@@ -13,19 +15,21 @@ import './homepage.css';
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYzNjIxOTE1LCJleHAiOjE2NjYyMTM5MTV9.o7snA8KbWVnpDt3uI_uZ2R-h9-rP30yKRTKd-uHsQUg
 
 
-const HomePage = () => {
+function HomePage () {
+
+
     return (
         <>
             <div className="homepage">
                 <div className="menu">
-                    <Header />
+                    <Header link="/auth" />
                 </div>
                 <div className="centralpage">
                     <div className="left">
                         <Stories />
-                        <Apresentation />   
+                        <Apresentation />
                         <ForYou />
-                        <AboutUs/>
+                        <AboutUs />
                     </div>
                     <div className="right">
                         <SideBar />
@@ -33,11 +37,12 @@ const HomePage = () => {
 
                 </div>
                 <div>
-                    <Footer/>
+                    <Footer />
                 </div>
             </div>
         </>
     )
+
 }
 
 export default HomePage;

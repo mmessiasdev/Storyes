@@ -12,7 +12,7 @@ import { URLREGISTER } from "../../../model/config";
 const Register = () => {
 
     const history = useNavigate();
-
+    
     const [credentialsRegister, setcredentialsRegister] = useState({
         username: '',
         email: '',
@@ -37,7 +37,7 @@ const Register = () => {
             );
             const data = await response.json();
             console.log(data)
-            history("/login");
+            history("/auth");
 
         }
         catch (error) {
@@ -63,7 +63,7 @@ const Register = () => {
                     </Link>
                 </div>
                 <div className="right">
-                    <Link to="/login" className="link">
+                    <Link to="/auth" className="link">
                         <Button className="buttonSecundary" variant="contained" type="submit">
 
                             login

@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 
 
 
-const Header = () => {
+const Header = ({link}) => {
     return <>
         <div className="header">
             <div className="logo"><h1><img src={logo} /> Storyes</h1></div>
@@ -18,7 +18,7 @@ const Header = () => {
             </div>
             <div className="account">
 
-                <Link to="/login" className="link">
+                <Link to={link} className="link">
                     <Button className="buttonSecundary" variant="contained" type="submit">
                         < BsFillPersonFill />
                         <h2>Login</h2>

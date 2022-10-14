@@ -1,5 +1,5 @@
 import { TextField } from "@mui/material";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useCallback, useEffect } from "react";
 import AuthContext from "../../../services/authcontext";
 import Header from "../../componnents/header/header";
 import './addproduct.css';
@@ -7,26 +7,57 @@ import { Link, useNavigate, redirect } from "react-router-dom";
 import { Button } from "@mui/material";
 import logo from "../../assets/logo.png";
 import { BiLogIn } from "react-icons/bi";
+import axios from "axios";
+import { URLPOSTPRODUCT, URLREGISTER } from "../../../model/config";
 
 
 
 
 
 const AddP = () => {
-    const { setIsAuthenticated } = useContext(AuthContext);
+
+    const history = useNavigate();
 
     const [credentials, setCredentials] = useState({
-        identifier: "",
-        password: "",
+        name: "",
+        desc: "",
+        brand: "",
     });
 
-    const handleChangeInput = ({ currentTarget }) => {
-        const { value, name } = currentTarget
+    const handleChange = (e) => {
+        const { name, value } = e.target;
         setCredentials({
-            ...credentials,
-            [name]: value
-        })
+            ...credentials, [name]: value
+        });
     }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch(
+                `${URLPOSTPRODUCT}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: credentials.name,
+                    desc: credentials.desc,
+                    brand: credentials.brand,
+                }),
+                method: 'POST',
+            }
+            );
+            const data = await response.json();
+            console.log(data)
+        }
+        catch (error) {
+            console.error(error);
+
+        }
+    }
+
+
+
     return (
         <>
             <div className="addproductscreen">
@@ -45,23 +76,36 @@ const AddP = () => {
                 <div className="addp">
                     <div className="left">
                         <h1>Adicione seu produto</h1>
-                        <div className="inputs">
-                            <TextField onChange={handleChangeInput} className="input" id="text" label="Nome do Produto" type="text" name="text" variant="filled" />
-                            <TextField onChange={handleChangeInput} className="input" id="text" label="Descriçao" type="text" name="text" variant="filled" />
-                            <TextField onChange={handleChangeInput} className="input" id="text" label="Marca" type="text" name="text" variant="filled" />
-                            <TextField onChange={handleChangeInput} className="input" id="text" label="Preço" type="text" name="text" variant="filled" />
-                            <TextField onChange={handleChangeInput} className="input" id="text" label="Preço Antigo" type="text" name="text" variant="filled" />
-                            <SentPhoto />
-                            <SentPhoto />
-                            <SentPhoto />
-                            <Link to="/login/auth" className="linkStart">
-                                <Button className="registerbutton">
-                                    <h2>Cadastrar Produto</h2>
+                        <form onSubmit={handleSubmit} className="inputs">
+                            <input
+                                type="text"
+                                name="name"
+                                onChange={handleChange}
+                                value={credentials.name}
+                            />
+                            <input
+                                type="text"
+                                name="desc"
+                                onChange={handleChange}
+                                value={credentials.desc}
+                            />
+                            <input
+                                type="text"
+                                name="brand"
+                                onChange={handleChange}
+                                value={credentials.brand}
+                            />
 
-                                </Button>
-                            </Link>
+                            <SentPhoto />
+                            <SentPhoto />
+                            <SentPhoto />
 
-                        </div>
+                            <Button className="registerbutton" type="submit">
+                                <h2>Cadastrar Produto</h2>
+
+                            </Button>
+
+                        </form>
                     </div>
                     <div className="right">
                     </div>
@@ -78,6 +122,7 @@ const SentPhoto = () => {
         <>
             <div className="sentphoto">
                 <h4>Envie a imagem do Produto</h4>
+                <input type="file"></input>
             </div>
         </>
     )

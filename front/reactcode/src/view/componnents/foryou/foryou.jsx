@@ -32,7 +32,7 @@ const ForYou = () => {
 const ProdApres = () => {
     return (
         <>
-            <Link to="/login" className="link" >
+            <Link to="/auth" className="link" >
 
                 <div className="product">
                     <div className="photo">

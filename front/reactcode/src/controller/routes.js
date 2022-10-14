@@ -23,13 +23,13 @@ function RoutesPage() {
             <Router history={history}>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/login" element={<Login />} />
+                    <Route exact path="/" element={<PrivateRoute />}>
+                        <Route exact path='/auth/homepage' element={<HomePageLogin />} />
+                        <Route exact path='/auth/addproduct' element={<AddP />} />
+                    </Route>    
+                    <Route path="/auth" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/homepage" element={<HomePage />} />
-                    <Route exact path='/' element={<PrivateRoute />}>
-                        <Route exact path='/login/auth' element={<HomePageLogin />} />
-                        <Route exact path='/login/addproduct' element={<AddP/>}/>
-                    </Route>
                 </Routes>
 
             </Router>
