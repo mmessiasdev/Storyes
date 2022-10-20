@@ -16,44 +16,52 @@ import { URLPOSTPRODUCT, URLREGISTER } from "../../../model/config";
 
 const AddP = () => {
 
-    const history = useNavigate();
+    // const history = useNavigate();
 
-    const [credentials, setCredentials] = useState({
-        name: "",
-        desc: "",
-        brand: "",
-    });
+    // const [credentials, setCredentials] = useState({
+    //     name: "",
+    //     desc: "",
+    //     brand: "",
+    // });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setCredentials({
-            ...credentials, [name]: value
-        });
-    }
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setCredentials({
+    //         ...credentials, [name]: value
+    //     });
+    // }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch(
-                `${URLPOSTPRODUCT}`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: credentials.name,
-                    desc: credentials.desc,
-                    brand: credentials.brand,
-                }),
-                method: 'POST',
-            }
-            );
-            const data = await response.json();
-            console.log(data)
-        }
-        catch (error) {
-            console.error(error);
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         const response = await fetch(
+    //             `${URLPOSTPRODUCT}`, {
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 name: credentials.name,
+    //                 desc: credentials.desc,
+    //                 brand: credentials.brand,
+    //             }),
+    //             method: 'POST',
+    //         }
+    //         );
+    //         const data = await response.json();
+    //         console.log(data)
+    //     }
+    //     catch (error) {
+    //         console.error(error);
 
-        }
+    //     }
+    // }
+
+
+    const [sentPhoto, setSentPhoto] = useState('');
+
+    function upload(e) {
+        e.preventDefault()
+        console.log("sentPhoto used!!")
     }
 
 
@@ -76,29 +84,13 @@ const AddP = () => {
                 <div className="addp">
                     <div className="left">
                         <h1>Adicione seu produto</h1>
-                        <form onSubmit={handleSubmit} className="inputs">
-                            <input
-                                type="text"
-                                name="name"
-                                onChange={handleChange}
-                                value={credentials.name}
-                            />
-                            <input
-                                type="text"
-                                name="desc"
-                                onChange={handleChange}
-                                value={credentials.desc}
-                            />
-                            <input
-                                type="text"
-                                name="brand"
-                                onChange={handleChange}
-                                value={credentials.brand}
-                            />
+                        <form className="inputs" onSubmit={upload}>
 
-                            <SentPhoto />
-                            <SentPhoto />
-                            <SentPhoto />
+
+                            <div className="sentphoto">
+                                <h4>Envie a imagem do Produto</h4>
+                                <input type="file" onChange={e => setSentPhoto(e.target.files[0])}></input>
+                            </div>
 
                             <Button className="registerbutton" type="submit">
                                 <h2>Cadastrar Produto</h2>
@@ -116,16 +108,4 @@ const AddP = () => {
         </>
     )
 }
-
-const SentPhoto = () => {
-    return (
-        <>
-            <div className="sentphoto">
-                <h4>Envie a imagem do Produto</h4>
-                <input type="file"></input>
-            </div>
-        </>
-    )
-}
-
 export default AddP;
