@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './foryou.css'
-import { Link } from "react-router-dom";
+import ProdApres from "../functions/ProdApres";
 
 const ForYou = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:1337/api/products?populate=*').then((res) => res.json()).then(res => {
+            console.log(res.data)
+            setProducts(res.data);
+        })
+    })
+
+
     return (
         <>
             <div className="foryou" id="foryou">
@@ -10,51 +20,31 @@ const ForYou = () => {
                     <h2>Bests</h2>
                 </div>
                 <div className="list">
-                    <ProdApres />
-                    <ProdApres />
-                    <ProdApres />
-                    <ProdApres />
-                    <ProdApres />
-                    <ProdApres />
-                    <ProdApres />
-                    <ProdApres />
-                    <ProdApres />
-                    <ProdApres />
+                    {products.map((resProd) =>
+                        <ProdApres key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} />
+                    )}
                 </div>
             </div>
-
         </>
 
     )
 }
 
-
-const ProdApres = () => {
-    return (
-        <>
-            <Link to="/auth" className="link" >
-
-                <div className="product">
-                    <div className="photo">
-
-                    </div>
-                    <div className="info">
-                        <div className="text">
-                            <h3>Teste </h3>
-                            <h5>Teste Teste Teste Teste Teste Teste Teste Test Teste</h5>
-                        </div>
-                        <div className="number">
-                            <h4>de 280,00 R$</h4>
-                            <h2>por 280,00 R$</h2>
-                        </div>
-                    </div>
-                </div>
-
-            </Link>
-        </>
-
-    )
-}
-
+{/* <div>
+{estate.attributes.thumb.data ? (
+    estate.attributes.thumb.data.map((pic) => (
+        <img
+            src={`http://localhost:1337${pic.attributes.url}`}
+            alt="img"
+            key={pic.attributes.id}
+        />
+    ))
+) : (
+    <img
+        src={`http://localhost:1337${estate.attributes.thumb.data.attributes.url}`}
+        alt="img"
+    />
+)}
+</div> */}
 
 export default ForYou;
