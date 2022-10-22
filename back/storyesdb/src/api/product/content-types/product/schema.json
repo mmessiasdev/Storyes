@@ -21,6 +21,20 @@
     },
     "brand": {
       "type": "string"
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "oldprice": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
     }
   }
 }

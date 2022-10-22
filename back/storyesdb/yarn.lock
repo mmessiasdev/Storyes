@@ -2070,7 +2070,18 @@
     "prettier" "2.7.1"
     "typescript" "4.6.2"
 
-"@strapi/utils@^4.2.3", "@strapi/utils@4.3.8":
+"@strapi/utils@^4.4.1":
+  "integrity" "sha512-EsyNrC4F95KC+tRNN+IBQrOVJIoKmbNxE2El6FBeO1TeKpppYFI4AWzAbj/txcaIOlhvlAY7J9zTRGms72GgHA=="
+  "resolved" "https://registry.npmjs.org/@strapi/utils/-/utils-4.4.3.tgz"
+  "version" "4.4.3"
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    "date-fns" "2.29.2"
+    "http-errors" "1.8.1"
+    "lodash" "4.17.21"
+    "yup" "0.32.9"
+
+"@strapi/utils@4.3.8":
   "integrity" "sha512-Ckgd3B+gOLRXyuAt2hFiXQQ7nay5UtsqAcy8On25gvsidz+5LK70k+afXG9A02Hg6pNeNU3goU/Ah3gpRho7fg=="
   "resolved" "https://registry.npmjs.org/@strapi/utils/-/utils-4.3.8.tgz"
   "version" "4.3.8"
@@ -7334,10 +7345,10 @@
   "resolved" "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz"
   "version" "0.3.0"
 
-"meilisearch@^0.27.0":
-  "integrity" "sha512-kZOZFIuSO7c6xRf+Y2/9/h6A9pl0sCl/G44X4KuaSwxGbruOZPhmxbeVEgLHBv4pUFvQ56rNVTA/2d/5GCU1YA=="
-  "resolved" "https://registry.npmjs.org/meilisearch/-/meilisearch-0.27.0.tgz"
-  "version" "0.27.0"
+"meilisearch@^0.28.0":
+  "integrity" "sha512-zC50xLyPWBtfAIZiFTSJyYJp/a5bO+dSSigBKUEoShFkuv9+/KC4J3T3ZejNVHXG2DU0ohOMf8TZ3HAHXNd3EA=="
+  "resolved" "https://registry.npmjs.org/meilisearch/-/meilisearch-0.28.0.tgz"
+  "version" "0.28.0"
   dependencies:
     "cross-fetch" "^3.1.5"
 
@@ -9707,13 +9718,13 @@
   "resolved" "https://registry.npmjs.org/std-env/-/std-env-3.2.1.tgz"
   "version" "3.2.1"
 
-"strapi-plugin-meilisearch@^0.7.1":
-  "integrity" "sha512-HW3M1ke6gqkbY8g6IAJTZhE5Iv86+kMFaC3sCU1hEMv05I4a/h9SKJvHTweyUEp0rp9P/b/tuAvFBamaisp2uw=="
-  "resolved" "https://registry.npmjs.org/strapi-plugin-meilisearch/-/strapi-plugin-meilisearch-0.7.1.tgz"
-  "version" "0.7.1"
+"strapi-plugin-meilisearch@^0.7.3":
+  "integrity" "sha512-FzMHnupQHzszIOpA76c3ktKM7BKg2zC5BqKYDDwObGbrJvSD/O17E3wBJGIziqRnmhzCqFP/f4Iee7QEyymJ9w=="
+  "resolved" "https://registry.npmjs.org/strapi-plugin-meilisearch/-/strapi-plugin-meilisearch-0.7.3.tgz"
+  "version" "0.7.3"
   dependencies:
-    "@strapi/utils" "^4.2.3"
-    "meilisearch" "^0.27.0"
+    "@strapi/utils" "^4.4.1"
+    "meilisearch" "^0.28.0"
 
 "stream-browserify@^3.0.0":
   "integrity" "sha512-H73RAHsVBapbim0tU2JwwOiXUj+fikfiaoYAKHF3VJfA0pe2BCzkhAHBlLG6REzE+2WNZcxOXjK7lkso+9euLA=="
