@@ -5,15 +5,27 @@ import 'package:fluttercode/view/components/widgets/textsdefault.dart';
 import 'package:http/http.dart' as http;
 
 class Products extends StatelessWidget {
-  Products({Key? key}) : super(key: key);
+  Products(
+      {Key? key,
+      // required this.scr,
+      required this.title,
+      required this.desc,
+      required this.oldPrice,
+      required this.price})
+      : super(key: key);
+  // String scr;
+  String title;
+  String desc;
+  String oldPrice;
+  String price;
 
-  Future<List> fetch() async {
-    var url = Uri.parse('http://localhost:1337/api/products?populate=*');
-    var response = await http.get(url);
-    var jsonResponse = jsonDecode(response.body);
-    var itemCount = jsonResponse['results'];
-    return itemCount;
-  }
+  // Future<List> fetch() async {
+  //   var url = Uri.parse('http://localhost:1337/api/products?populate=*');
+  //   var response = await http.get(url);
+  //   var jsonResponse = jsonDecode(response.body);
+  //   var itemCount = jsonResponse['results'];
+  //   return itemCount;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -49,15 +61,10 @@ class Products extends StatelessWidget {
                       children: [
                         ThourdText(
                           size: 16,
-                          text: 'Teste Teste Teste',
+                          text: title,
                           align: TextAlign.start,
                         ),
-                        FourthText(
-                          size: 7,
-                          maxLines: 2,
-                          text:
-                              'Teste Teste Teste Text TEste TEste TEstE TEsasrafewe wvwvrbherg',
-                        ),
+                        FourthText(size: 7, maxLines: 2, text: desc),
                       ],
                     ),
                     Column(
@@ -65,12 +72,12 @@ class Products extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         SecundaryText(
-                          text: 'de 300,00 R\$',
+                          text: 'de ${oldPrice} R\$',
                           size: 13,
                           align: TextAlign.end,
                         ),
                         ThourdText(
-                          text: "por 200,00 R\$",
+                          text: 'por ${price} R\$',
                           size: 22,
                           align: TextAlign.end,
                         )
@@ -88,7 +95,19 @@ class Products extends StatelessWidget {
 }
 
 class ProductsFy extends StatelessWidget {
-  ProductsFy({Key? key}) : super(key: key);
+  ProductsFy(
+      {Key? key,
+      // required this.scr,
+      required this.title,
+      required this.desc,
+      // required this.oldPrice,
+      required this.price})
+      : super(key: key);
+  // String scr;
+  String title;
+  String desc;
+  // String oldPrice;
+  String price;
 
   @override
   Widget build(BuildContext context) {
@@ -119,34 +138,30 @@ class ProductsFy extends StatelessWidget {
                         topRight: Radius.circular(0),
                       ),
                     ),
+                    // child: Image.network(scr),
                   ),
                   Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     child: SizedBox(
-                      width: MediaQuery.of(context).size.width * .15,
+                      width: MediaQuery.of(context).size.width * 0.12,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           ThourdText(
                             size: 10,
-                            text: 'Teste Teste Teste',
+                            text: title,
                             align: TextAlign.end,
                           ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              SecundaryText(
-                                text: 'de 300,00 R\$',
-                                size: 7,
-                                align: TextAlign.end,
-                              ),
                               ThourdText(
+                                text: 'por ${price} R\$',
                                 size: 10,
-                                text: 'por 200,00 R\$',
                                 align: TextAlign.end,
-                              ),
+                              )
                             ],
                           ),
                         ],
