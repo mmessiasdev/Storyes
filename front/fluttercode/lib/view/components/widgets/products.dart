@@ -116,13 +116,13 @@ class ProductsFy extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0),
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.42,
             decoration: BoxDecoration(
               color: Color.fromRGBO(217, 217, 217, 1),
               borderRadius: BorderRadius.circular(20),
             ),
             child: SizedBox(
               height: 130,
+              width: 250,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -144,7 +144,7 @@ class ProductsFy extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     child: SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.12,
+                      width: MediaQuery.of(context).size.width / 7,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

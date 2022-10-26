@@ -38,10 +38,10 @@ class ForYou extends StatelessWidget {
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
                         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 200,
+                          maxCrossAxisExtent: 250,
                           mainAxisSpacing: 10,
                           crossAxisSpacing: 30,
-                          mainAxisExtent: 180,
+                          mainAxisExtent: 160,
                         ),
                         itemCount: snapshot.data!.length,
                         itemBuilder: (context, index) {

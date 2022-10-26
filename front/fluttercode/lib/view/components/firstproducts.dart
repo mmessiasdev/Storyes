@@ -24,37 +24,34 @@ class First extends StatelessWidget {
     return Column(
       children: [
         LateralTitle(title: 'Populares'),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: SizedBox(
-            height: 150,
-            child: FutureBuilder<List>(
-                future: fetch(),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: snapshot.data!.length,
-                      itemBuilder: (context, index) {
-                        var fetchProduct = snapshot.data![index];
-                        if (fetchProduct["attributes"]["name"] != null) {
-                          return Products(
-                            title:
-                                fetchProduct["attributes"]["name"].toString(),
-                            desc: fetchProduct["attributes"]["desc"].toString(),
-                            price:
-                                fetchProduct["attributes"]["price"].toString(),
-                            oldPrice: fetchProduct["attributes"]["oldprice"]
-                                .toString(),
-                          );
-                        }
-                        return CircularProgressIndicator();
-                      },
-                    );
-                  }
-                  return CircularProgressIndicator();
-                }),
-          ),
+        SizedBox(
+          height: 150,
+          child: FutureBuilder<List>(
+              future: fetch(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      var fetchProduct = snapshot.data![index];
+                      if (fetchProduct["attributes"]["name"] != null) {
+                        return Products(
+                          title: fetchProduct["attributes"]["name"].toString(),
+                          desc: fetchProduct["attributes"]["desc"].toString(),
+                          price: fetchProduct["attributes"]["price"].toString(),
+                          oldPrice:
+                              fetchProduct["attributes"]["oldprice"].toString(),
+                        );
+                      }
+                      return Container(
+                        color: Colors.grey[300],
+                      );
+                    },
+                  );
+                }
+                return Container();
+              }),
         ),
       ],
     );
