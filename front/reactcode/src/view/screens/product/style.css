@@ -1,0 +1,12 @@
+.productpage{
+    height: 100vh;
+    width: 100%;
+}
+
+.productpage .homepageCont{
+    display: flex;
+    padding-inline: 50px;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}

@@ -24,7 +24,7 @@
     width: 350px;
     height: 180px;
     display: grid;
-    margin-top: 20px;
+    margin-top: 50px;
     grid-template-columns: 120px 200px;
     background-color: rgba(217, 217, 217, 1);
     border-radius: 20px;

@@ -9,7 +9,6 @@
 
 .apresentation .list{
     margin-top: 20px;
-    width: 100%;
     display: grid;
     overflow-x: scroll;
     grid-template-columns: 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px;
@@ -34,6 +33,14 @@
     height:180px;
     border-radius: 20px;
     background-color: rgb(186, 196, 196);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photo img{
+    height:180px;
+
 }
 
 

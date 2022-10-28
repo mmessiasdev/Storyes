@@ -24,7 +24,7 @@ A project aimed at selling and adding geek products on a single site, the Stoyre
 
 - Create Home page code and design; **✅**
 
-- Implementation of the back end;
+- Implementation of the back end; **✅**
 
 - Perform e2e and Unit tests;
 

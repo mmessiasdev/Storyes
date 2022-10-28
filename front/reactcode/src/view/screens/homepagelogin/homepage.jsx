@@ -39,12 +39,6 @@ const HomePage = () => {
 
                                 </Button>
                             </Link>
-                            {/* <div>
-                                <button onClick={showOrHide}>Clique em mim</button>
-                                {showElement ? <p>Tô aqui</p> : null}
-                            </div> */}
-
-
                         </div>
                     </div>
                 </div>

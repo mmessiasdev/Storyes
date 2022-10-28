@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import './foryou.css'
-import ProdApres from "../functions/ProdApres";
 import { DEFAULTPRODUCTS } from "../../../config";
+import MainProduct from "../functions/mainproduct";
 
 const ForYou = () => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);   
 
     useEffect(() => {
         fetch(DEFAULTPRODUCTS).then((res) => res.json()).then(res => {
@@ -22,7 +22,7 @@ const ForYou = () => {
                 </div>
                 <div className="list">
                     {products.map((resProd) =>
-                        <ProdApres key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} />
+                        <MainProduct key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} img={resProd.attributes.thumb.data.attributes.url}/>
                     )}
                 </div>
             </div>

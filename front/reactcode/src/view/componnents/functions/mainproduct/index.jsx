@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { GENERALURL } from "../../../../config";
 
-const ProdApres = ({ name, desc, oldPrice, price, img }) => {
-    const imageUrl = "http://localhost:1337";
+const MainProduct = ({ name, desc, oldPrice, price, img }) => {
     return (
         <>
-            <Link to="/auth" className="link" >
+            <Link to="/auth/product/:id" className="link" >
                 <div className="product">
                     <div className="photo">
-                        {/* <img src={imageUrl + img} /> */}
-                        <h3>{img}</h3>
+                        <img src={GENERALURL + img}/>
                     </div>
                     <div className="info">
                         <div className="text">
@@ -29,4 +28,4 @@ const ProdApres = ({ name, desc, oldPrice, price, img }) => {
     )
 }
 
-export default ProdApres;
+export default MainProduct;

@@ -1,7 +1,7 @@
 import './apresentation.css';
 import React, { useEffect, useState } from "react";
-import ProdApres from "../functions/ProdApres";
 import { DEFAULTPRODUCTS } from "../../../config";
+import MainProduct from '../functions/mainproduct';
 
 
 const Apresentation = () => {
@@ -23,12 +23,13 @@ const Apresentation = () => {
                 <div className="title">
                     <h2>Popular</h2>
                 </div>
+             
                 <div className="list">
                     {products.map((resProd) => {
                         return (
                             <>
                                 {/* <img scr={resProd.attributes.thumb.data.attributes} /> */}
-                                <ProdApres key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} />
+                                <MainProduct key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} img={resProd.attributes.thumb.data.attributes.url}/>
                             </>
                         )
                     })}

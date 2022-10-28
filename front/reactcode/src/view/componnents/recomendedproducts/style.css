@@ -1,0 +1,12 @@
+.recomended{
+    width: 30%;
+    padding-left: 75px;
+}
+
+.recomended .product{
+    padding-top: 35px;
+    width: 400px;
+    display: flex;
+    padding-inline: 30px;
+    justify-content: space-between;
+}
