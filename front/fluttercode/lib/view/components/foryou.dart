@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:fluttercode/view/components/widgets/products.dart';
+import 'package:fluttercode/view/components/widgets/productsfy.dart';
 import 'package:fluttercode/view/components/widgets/titles.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -12,7 +12,7 @@ class ForYou extends StatelessWidget {
   const ForYou({Key? key}) : super(key: key);
 
   Future<List> fetch() async {
-    var url = Uri.parse('http://localhost:1337/api/products/');
+    var url = Uri.parse('http://localhost:1337/api/products/?populate=*');
     var response = await http.get(url);
     var jsonResponse = jsonDecode(response.body);
     var itemCount = jsonResponse["data"];
@@ -46,8 +46,14 @@ class ForYou extends StatelessWidget {
                         itemCount: snapshot.data!.length,
                         itemBuilder: (context, index) {
                           var fetchProduct = snapshot.data![index];
+                          var url = "http://localhost:1337";
+
                           if (fetchProduct["attributes"]["name"] != null) {
                             return ProductsFy(
+                                img: url +
+                                    fetchProduct["attributes"]["thumb"]["data"]
+                                            ["attributes"]["url"]
+                                        .toString(),
                                 title: fetchProduct["attributes"]["name"]
                                     .toString(),
                                 desc: fetchProduct["attributes"]["desc"]

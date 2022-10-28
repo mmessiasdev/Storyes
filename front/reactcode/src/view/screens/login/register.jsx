@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import logo from "../../assets/logo.png";
 import { useNavigate, Link } from "react-router-dom";
-import { URLREGISTER } from "../../../model/config";
+import { DEFAULTREGISTER } from "../../../config";
 
 
 
@@ -23,7 +23,7 @@ const Register = () => {
         e.preventDefault();
         try {
             const response = await fetch(
-                `${URLREGISTER}`, {
+                `${DEFAULTREGISTER}`, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

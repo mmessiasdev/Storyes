@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import './foryou.css'
 import ProdApres from "../functions/ProdApres";
+import { DEFAULTPRODUCTS } from "../../../config";
 
 const ForYou = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:1337/api/products?populate=*').then((res) => res.json()).then(res => {
+        fetch(DEFAULTPRODUCTS).then((res) => res.json()).then(res => {
             console.log(res.data)
             setProducts(res.data);
         })

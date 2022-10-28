@@ -1,6 +1,4 @@
-import axios from "axios";
-import React, { Component, useEffect, useState } from "react";
-import api from "../../../services/baseapi";
+import React from "react";
 import AboutUs from "../../componnents/aboutus/aboutus";
 import Apresentation from "../../componnents/apresentation/apresentation";
 import Footer from "../../componnents/footer/footer";

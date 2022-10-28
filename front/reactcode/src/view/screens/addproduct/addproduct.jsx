@@ -1,16 +1,10 @@
 import { TextField } from "@mui/material";
-import React, { useState, useContext, useCallback, useEffect } from "react";
-import AuthContext from "../../../services/authcontext";
-import Header from "../../componnents/header/header";
+import React, { useState, useEffect } from "react";
 import './addproduct.css';
 import { Link, useNavigate, redirect } from "react-router-dom";
 import { Button } from "@mui/material";
 import logo from "../../assets/logo.png";
-import { BiLogIn } from "react-icons/bi";
-import axios from "axios";
-import { URLPOSTPRODUCT, URLREGISTER } from "../../../model/config";
-import authapi from "../../../services/authapi";
-import authcontext from "../../../services/authcontext";
+
 
 
 

@@ -1,9 +1,9 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { URLLOGIN, URLREGISTER } from "../model/config";
+import { DEFAULTLOGIN, DEFAULTREGISTER } from "../../config";
 
 function authenticate(credentials){
-    return axios.post(URLLOGIN, credentials).then(res => res.data).then(data => {
+    return axios.post(DEFAULTLOGIN, credentials).then(res => res.data).then(data => {
         window.localStorage.setItem("Key", data.jwt)
         window.localStorage.setItem("Username", data.user.username)
         axios.defaults.headers["Authorization"] = "Bearer" + data.jwt
@@ -13,7 +13,7 @@ function authenticate(credentials){
     })
 }
 function authRegister(credentialsRegister){
-    return axios.post(URLREGISTER, credentialsRegister).then(res => res.data).then(data => {
+    return axios.post(DEFAULTREGISTER, credentialsRegister).then(res => res.data).then(data => {
         console.log(data);
     })
 }

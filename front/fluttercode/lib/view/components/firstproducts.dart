@@ -12,7 +12,7 @@ class First extends StatelessWidget {
   const First({Key? key}) : super(key: key);
 
   Future<List> fetch() async {
-    var url = Uri.parse('http://localhost:1337/api/products/');
+    var url = Uri.parse('http://localhost:1337/api/products/?populate=*');
     var response = await http.get(url);
     var jsonResponse = jsonDecode(response.body);
     var itemCount = jsonResponse["data"];
@@ -35,14 +35,25 @@ class First extends StatelessWidget {
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
                       var fetchProduct = snapshot.data![index];
+                      var url = "http://localhost:1337";
                       if (fetchProduct["attributes"]["name"] != null) {
-                        return Products(
-                          title: fetchProduct["attributes"]["name"].toString(),
-                          desc: fetchProduct["attributes"]["desc"].toString(),
-                          price: fetchProduct["attributes"]["price"].toString(),
-                          oldPrice:
-                              fetchProduct["attributes"]["oldprice"].toString(),
-                        );
+                        if (fetchProduct["attributes"]["thumb"]["data"]
+                                ["attributes"]["url"] !=
+                            null) {
+                          return Products(
+                            img: url +
+                                fetchProduct["attributes"]["thumb"]["data"]
+                                        ["attributes"]["url"]
+                                    .toString(),
+                            title:
+                                fetchProduct["attributes"]["name"].toString(),
+                            desc: fetchProduct["attributes"]["desc"].toString(),
+                            price:
+                                fetchProduct["attributes"]["price"].toString(),
+                            oldPrice: fetchProduct["attributes"]["oldprice"]
+                                .toString(),
+                          );
+                        }
                       }
                       return Container(
                         color: Colors.grey[300],

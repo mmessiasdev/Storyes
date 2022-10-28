@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_images_images",
+  "info": {
+    "displayName": "images",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "thumb": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

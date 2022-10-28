@@ -1,18 +1,18 @@
-import axios from "axios";
-import { Link } from "react-router-dom";
 import './apresentation.css';
 import React, { useEffect, useState } from "react";
 import ProdApres from "../functions/ProdApres";
+import { DEFAULTPRODUCTS } from "../../../config";
 
 
 const Apresentation = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:1337/api/products?populate=*').then((res) => res.json()).then(res => {
+        fetch(DEFAULTPRODUCTS).then((res) => res.json()).then(res => {
             setProducts(res.data);
         })
     })
+
 
 
 
@@ -24,9 +24,14 @@ const Apresentation = () => {
                     <h2>Popular</h2>
                 </div>
                 <div className="list">
-                    {products.map((resProd) =>
-                        <ProdApres key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price}/>
-                    )}
+                    {products.map((resProd) => {
+                        return (
+                            <>
+                                {/* <img scr={resProd.attributes.thumb.data.attributes} /> */}
+                                <ProdApres key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} />
+                            </>
+                        )
+                    })}
                 </div>
             </div>
         </>

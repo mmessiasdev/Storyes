@@ -4,13 +4,13 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import HomePage from '../view/screens/homepage/homepage';
 import HomePageLogin from '../view/screens/homepagelogin/homepage';
 import history from "../model/history";
-import Login from '../view/componnents/login/login';
-import Register from '../view/componnents/login/register';
-import AuthContext from '../services/authcontext';
-import authapi from '../services/authapi';
+import Login from '../view/screens/login/login';
+import AuthContext from './auth/authcontext';
+import authapi from './auth/authapi';
 import React, { useState } from 'react';
 import PrivateRoute from '../view/privateroutes/privateroute';
 import AddP from '../view/screens/addproduct/addproduct';
+import Register from '../view/screens/login/register';
 
 
 // ---------- PART RESPONSIBLE FOR MANAGING THE APP'S PAGES ---------- // 
@@ -27,8 +27,8 @@ function RoutesPage() {
                         <Route exact path='/auth/homepage' element={<HomePageLogin />} />
                         <Route exact path='/auth/addproduct' element={<AddP />} />
                     </Route>    
-                    <Route path="/auth" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
+                    <Route path="/auth" element={<Login/>} />
+                    <Route path="/register" element={<Register/>} />
                     <Route path="/homepage" element={<HomePage />} />
                 </Routes>
 

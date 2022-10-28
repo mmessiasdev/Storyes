@@ -14,18 +14,20 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "desc": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "brand": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "thumb": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -34,7 +36,8 @@
       "type": "string"
     },
     "price": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }
