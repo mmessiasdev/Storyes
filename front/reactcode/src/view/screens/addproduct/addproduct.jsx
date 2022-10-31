@@ -4,6 +4,7 @@ import './addproduct.css';
 import { Link, useNavigate, redirect } from "react-router-dom";
 import { Button } from "@mui/material";
 import logo from "../../assets/logo.png";
+import axios from "axios";
 
 
 
@@ -15,11 +16,20 @@ const AddP = () => {
     const [product, setProduct] = useState([]);
     const [newName, setNewName] = useState("");
     const [newDesc, setNewDesc] = useState("");
+    const [newOldPrice, setNewOldPrice] = useState("");
+    const [newPrice, setNewPrice] = useState("");
     const [newBrand, setNewBrand] = useState("");
+    const [newQuantity, setNewQuantity] = useState("");
+    const [newThumb, setNewThumb] = useState("");
+
+
+    const [files, setFiles] = useState()
+
 
 
     useEffect(() => {
         update();
+        updateImg();
     }, []);
 
 
@@ -30,18 +40,34 @@ const AddP = () => {
                 setProduct(product.data);
             })
     }
+    function updateImg() {
+        fetch('http://localhost:1337/api/upload/')
+            .then(res => res.json())
+            .then(product => {
+                setProduct(product.data);
+            })
+    }
 
 
     function addProduct(e) {
+        alert("Produto cadastrado.")
         e.preventDefault();
         let name = newName;
         let desc = newDesc;
         let brand = newBrand;
+        let oldprice = newOldPrice;
+        let price = newPrice;
+        let thumb = newThumb;
+        let quantity = newQuantity;
         let body = {
             data: {
                 name,
                 desc,
-                brand
+                brand,
+                quantity,
+                price,
+                oldprice,
+                thumb
             }
         };
 
@@ -56,8 +82,26 @@ const AddP = () => {
                 setNewDesc("");
                 setNewName("");
                 setNewBrand("");
+                setNewQuantity("");
+                setNewOldPrice("");
+                setNewPrice("");
                 update();
+            });
+
+
+            fetch('http://localhost:1337/api/upload/', {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(body)
             })
+                .then(() => {
+                    setNewThumb("");
+                    update();
+                });
+            
+
     }
 
 
@@ -81,16 +125,15 @@ const AddP = () => {
                         <h1>Adicione seu produto</h1>
                         <form className="inputs" onSubmit={addProduct}>
                             <div>
-                                <TextField value={newName} onChange={e => setNewName(e.currentTarget.value)} className="input" id="name" label="Nome do Produto" type="text" name="name" variant="filled" />
-                                <TextField value={newDesc} onChange={e => setNewDesc(e.currentTarget.value)} className="input" id="desc" label="Descrição do Produto" type="text" name="desc" variant="filled" />
-                                <TextField value={newBrand} onChange={e => setNewBrand(e.currentTarget.value)} className="input" id="brand" label="Marca do Porduto" type="text" name="brand" variant="filled" />
+                                <TextField value={newName} onChange={e => setNewName(e.currentTarget.value)} className="input" id="name" label="Nome do Produto" type="text" name="name" variant="filled" required />
+                                <TextField value={newDesc} onChange={e => setNewDesc(e.currentTarget.value)} className="input" id="desc" label="Descrição do Produto" type="text" name="desc" variant="filled" required />
+                                <TextField value={newOldPrice} onChange={e => setNewOldPrice(e.currentTarget.value)} className="input" id="oldprice" label="Preço Antigo" type="text" name="oldprice" variant="filled" required />
+                                <TextField value={newPrice} onChange={e => setNewPrice(e.currentTarget.value)} className="input" id="price" label="Preço" type="text" name="price" variant="filled" required />
+                                <TextField value={newBrand} onChange={e => setNewBrand(e.currentTarget.value)} className="input" id="brand" label="Marca do Porduto" type="text" name="brand" variant="filled" required />
+                                <TextField value={newQuantity} onChange={e => setNewQuantity(e.currentTarget.value)} className="input" id="quantity" label="Quatidade de produtos" type="text" name="quantity" variant="filled" required />
+                                <input value={newThumb} onChange={e => setNewThumb(e.currentTarget.value)} type="file" id="thumb" name="thumb"/>
+                                
                             </div>
-
-                            {/* 
-                            <div className="sentphoto">
-                                <h4>Envie a imagem do Produto</h4>
-                                <input type="file" onChange={e => setSentPhoto(e.target.files[0])}></input>
-                            </div> */}
 
                             <Button className="registerbutton" type="submit">
                                 <h2>Cadastrar Produto</h2>

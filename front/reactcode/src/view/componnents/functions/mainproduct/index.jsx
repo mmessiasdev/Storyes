@@ -5,7 +5,7 @@ import { GENERALURL } from "../../../../config";
 const MainProduct = ({ name, desc, oldPrice, price, img }) => {
     return (
         <>
-            <Link to="/auth/product/:id" className="link" >
+            <Link to="/auth/product" className="link" >
                 <div className="product">
                     <div className="photo">
                         <img src={GENERALURL + img}/>
