@@ -32,7 +32,8 @@ class ProductPage extends StatelessWidget {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                 child: Column(
                   children: [
                     SecundaryText(
@@ -48,39 +49,77 @@ class ProductPage extends StatelessWidget {
                   ],
                 ),
               ),
-              ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                      height: 242,
-                      width: 180,
-                      child: Image.network(
-                        "http://localhost:1337${product["attributes"]["thumb"]["data"]["attributes"]["url"].toString()}",
-                        fit: BoxFit.cover,
+              SizedBox(
+                height: 242,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: SizedBox(
+                          height: 242,
+                          width: 180,
+                          child: Image.network(
+                            "http://localhost:1337${product["attributes"]["thumb"]["data"]["attributes"]["url"].toString()}",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                      height: 242,
-                      width: 180,
-                      child: Image.network(
-                        "http://localhost:1337${product["attributes"]["thumb"]["data"]["attributes"]["url"].toString()}",
-                        fit: BoxFit.cover,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: SizedBox(
+                          height: 242,
+                          width: 180,
+                          child: Image.network(
+                            "http://localhost:1337${product["attributes"]["thumb"]["data"]["attributes"]["url"].toString()}",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: SizedBox(
+                          height: 242,
+                          width: 180,
+                          child: Image.network(
+                            "http://localhost:1337${product["attributes"]["thumb"]["data"]["attributes"]["url"].toString()}",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: SizedBox(
+                          height: 242,
+                          width: 180,
+                          child: Image.network(
+                            "http://localhost:1337${product["attributes"]["thumb"]["data"]["attributes"]["url"].toString()}",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 child: Column(
                   children: [
                     ThourdText(
-                      size: 16,
+                      size: 15,
                       text: product["attributes"]["name"].toString(),
                       align: TextAlign.start,
                     ),
