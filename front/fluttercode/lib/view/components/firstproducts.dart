@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttercode/view/components/widgets/products.dart';
 import 'package:fluttercode/view/components/widgets/textsdefault.dart';
 import 'package:fluttercode/view/components/widgets/titles.dart';
+import 'package:fluttercode/view/screens/product.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -40,18 +40,34 @@ class First extends StatelessWidget {
                         if (fetchProduct["attributes"]["thumb"]["data"]
                                 ["attributes"]["url"] !=
                             null) {
-                          return Products(
-                            img: url +
-                                fetchProduct["attributes"]["thumb"]["data"]
-                                        ["attributes"]["url"]
-                                    .toString(),
-                            title:
-                                fetchProduct["attributes"]["name"].toString(),
-                            desc: fetchProduct["attributes"]["desc"].toString(),
-                            price:
-                                fetchProduct["attributes"]["price"].toString(),
-                            oldPrice: fetchProduct["attributes"]["oldprice"]
-                                .toString(),
+                          return GestureDetector(
+                            child: Products(
+                              img: url +
+                                  fetchProduct["attributes"]["thumb"]["data"]
+                                          ["attributes"]["url"]
+                                      .toString(),
+                              title:
+                                  fetchProduct["attributes"]["name"].toString(),
+                              desc:
+                                  fetchProduct["attributes"]["desc"].toString(),
+                              price: fetchProduct["attributes"]["price"]
+                                  .toString(),
+                              oldPrice: fetchProduct["attributes"]["oldprice"]
+                                  .toString(),
+                            ),
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProductPage(
+                                  product: fetchProduct,
+                                  desc: fetchProduct,
+                                  brand: fetchProduct,
+                                  oldprice: fetchProduct,
+                                  price: fetchProduct,
+                                  img: fetchProduct,
+                                ),
+                              ),
+                            ),
                           );
                         }
                       }
