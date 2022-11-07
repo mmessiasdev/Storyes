@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "stars": {
+      "type": "decimal",
+      "required": true,
+      "default": 5
+    },
+    "price": {
+      "type": "string",
+      "required": true,
+      "default": "0,00"
+    },
+    "oldprice": {
+      "type": "string",
+      "required": false,
+      "default": "0,00"
+    },
+    "desc": {
+      "type": "text",
+      "required": true
+    },
+    "brand": {
+      "type": "string",
+      "required": true
+    },
+    "thumb": {
+      "type": "text",
+      "required": true,
+      "default": "https://i.stack.imgur.com/6M513.png"
+    },
+    "secoundimg": {
+      "type": "text",
+      "required": true,
+      "default": "https://i.stack.imgur.com/6M513.png"
+    },
+    "thourdimg": {
+      "type": "text",
+      "required": true,
+      "default": "https://i.stack.imgur.com/6M513.png"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    }
+  }
+}
