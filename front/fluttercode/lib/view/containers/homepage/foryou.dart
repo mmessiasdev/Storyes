@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:fluttercode/controller/products.dart';
+import 'package:fluttercode/model/products.dart';
+import 'package:fluttercode/repository/products.dart';
 import 'package:fluttercode/view/components/greyproducts.dart';
 import 'package:fluttercode/view/widgets/titles.dart';
 import 'dart:convert';
@@ -9,15 +12,8 @@ import '../../product.dart';
 import 'firstproducts.dart';
 
 class ForYou extends StatelessWidget {
-  const ForYou({Key? key}) : super(key: key);
-
-  Future<List> fetch() async {
-    var url = Uri.parse('http://localhost:1337/api/products/?populate=*');
-    var response = await http.get(url);
-    var jsonResponse = jsonDecode(response.body);
-    var itemCount = jsonResponse["data"];
-    return itemCount;
-  }
+  ForYou({Key? key}) : super(key: key);
+  var fetchProducts = ProductsController(ProductsRepository());
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +25,8 @@ class ForYou extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: SizedBox(
-              child: FutureBuilder<List>(
-                  future: fetch(),
+              child: FutureBuilder<List<Attributes>>(
+                  future: fetchProducts.fetchProductsList(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       return GridView.builder(
@@ -43,33 +39,28 @@ class ForYou extends StatelessWidget {
                           crossAxisSpacing: 30,
                           mainAxisExtent: 160,
                         ),
-                        itemCount: snapshot.data!.length,
+                        itemCount: snapshot.data?.length ?? 1,
                         itemBuilder: (context, index) {
-                          var fetchProduct = snapshot.data![index];
-                          var url = "http://localhost:1337";
+                          var renders = snapshot.data![index];
 
-                          if (fetchProduct["attributes"]["name"] != null) {
+                          if (renders != null) {
                             return GestureDetector(
                               child: ProductsFy(
-                                  img: fetchProduct["attributes"]["thumb"]
+                                  img: renders.thumb
                                       .toString(),
-                                  title: fetchProduct["attributes"]["name"]
+                                  title: renders.name
                                       .toString(),
-                                  desc: fetchProduct["attributes"]["desc"]
+                                  desc: renders.desc
                                       .toString(),
-                                  price: fetchProduct["attributes"]["price"]
+                                  price: renders.price
                                       .toString()),
                               onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => ProductPage(
-                                    product: fetchProduct,
-                                    desc: fetchProduct,
-                                    brand: fetchProduct,
-                                    oldprice: fetchProduct,
-                                    price: fetchProduct,
-                                    img: fetchProduct,
-                                    id: fetchProduct["id"],
+                                    thumb: renders.thumb.toString(),
+                                    secoungimage: renders.secoundimg.toString(),
+                                    id: ,
                                   ),
                                 ),
                               ),

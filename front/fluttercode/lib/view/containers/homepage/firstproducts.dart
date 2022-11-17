@@ -53,11 +53,6 @@ class First extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => ProductPage(
                                 product: fetchProduct,
-                                desc: fetchProduct,
-                                brand: fetchProduct,
-                                oldprice: fetchProduct,
-                                price: fetchProduct,
-                                img: fetchProduct,
                                 id: fetchProduct["id"],
                               ),
                             ),

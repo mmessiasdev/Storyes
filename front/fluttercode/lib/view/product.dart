@@ -12,21 +12,27 @@ import 'containers/homepage/header.dart';
 class ProductPage extends StatefulWidget {
   ProductPage(
       {Key? key,
-      required this.product,
+      required this.name,
       required this.desc,
       required this.brand,
       required this.oldprice,
       required this.price,
-      required this.img,
-      required this.id})
+      required this.id,
+      required this.thumb,
+      required this.secoungimage,
+      required this.thirdimage,
+      required this.quantity})
       : super(key: key);
 
-  Map<String, dynamic> product;
-  Map<String, dynamic> desc;
-  Map<String, dynamic> brand;
-  Map<String, dynamic> oldprice;
-  Map<String, dynamic> price;
-  Map<String, dynamic> img;
+  String desc;
+  String brand;
+  String oldprice;
+  String price;
+  String thumb;
+  String secoungimage;
+  String thirdimage;
+  String quantity;
+  String name;
   int id;
 
   @override
@@ -52,13 +58,11 @@ class _ProductPageState extends State<ProductPage> {
                 children: [
                   SecundaryText(
                       color: Colors.black,
-                      text:
-                          '${widget.product["attributes"]["oldprice"].toString()} R\$',
+                      text: '${widget.oldprice} R\$',
                       size: 20,
                       align: TextAlign.start),
                   ThourdText(
-                    text:
-                        '${widget.product["attributes"]["price"].toString()} R\$',
+                    text: '${widget.price} R\$',
                     size: 35,
                     align: TextAlign.start,
                   ),
@@ -70,15 +74,9 @@ class _ProductPageState extends State<ProductPage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  contImage(
-                      url:
-                          "${widget.product["attributes"]["thumb"].toString()}"),
-                  contImage(
-                      url:
-                          "${widget.product["attributes"]["secoundimg"].toString()}"),
-                  contImage(
-                      url:
-                          "${widget.product["attributes"]["thourdimg"].toString()}")
+                  contImage(url: "${widget.thumb}"),
+                  contImage(url: "${widget.secoungimage}"),
+                  contImage(url: "${widget.thirdimage}")
                 ],
               ),
             ),
@@ -92,15 +90,13 @@ class _ProductPageState extends State<ProductPage> {
                       children: [
                         ThourdText(
                           size: 20,
-                          text: widget.product["attributes"]["name"].toString(),
+                          text: widget.name.toString(),
                           align: TextAlign.start,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: ThourdText(
-                              text: "Quantidade: " +
-                                  widget.product["attributes"]["quantity"]
-                                      .toString(),
+                              text: "Quantidade: " + widget.quantity.toString(),
                               align: TextAlign.start,
                               size: 12),
                         )
@@ -127,13 +123,7 @@ class _ProductPageState extends State<ProductPage> {
                               size: 30,
                             ),
                           )),
-                      onTap: () {
-                        setState(() {
-                          int quantity =
-                              widget.product["attributes"]["quantity"]--;
-                          print(quantity);
-                        });
-                      }),
+                      onTap: () {}),
                 ),
               ]),
             ),
@@ -179,15 +169,28 @@ class _ProductPageState extends State<ProductPage> {
                 ),
               ),
             ),
-            FourthText(
-              size: 16,
-              text: widget.product["attributes"]["desc"].toString(),
-              maxLines: 5,
-            ),
-            ThourdText(
-              text: widget.product["attributes"]["brand"].toString(),
-              size: 15,
-              align: TextAlign.start,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: ThourdText(
+                      text: "Marca: ${widget.brand}",
+                      size: 15,
+                      align: TextAlign.start,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: FourthText(
+                      size: 16,
+                      text: widget.desc.toString(),
+                      maxLines: 5,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

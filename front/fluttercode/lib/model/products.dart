@@ -62,6 +62,7 @@ class Attributes {
   String? secoundimg;
   String? thourdimg;
   int? quantity;
+  int? id;
   Categories? categories;
 
   Attributes(
@@ -77,9 +78,11 @@ class Attributes {
       this.secoundimg,
       this.thourdimg,
       this.quantity,
-      this.categories});
+      this.categories,
+      this.id});
 
   Attributes.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
     name = json['attributes']['name'];
     stars = json['attributes']['stars'];
     price = json['attributes']['price'];
@@ -92,27 +95,28 @@ class Attributes {
     secoundimg = json['attributes']['secoundimg'];
     thourdimg = json['attributes']['thourdimg'];
     quantity = json['attributes']['quantity'];
-    categories = json['attributes']['categories'] != null
-        ? new Categories.fromJson(json['attributes']['categories'])
+    categories = json['categories'] != null
+        ? new Categories.fromJson(json['categories'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['attributes']['name'] = this.name;
-    data['attributes']['stars'] = this.stars;
-    data['attributes']['price'] = this.price;
-    data['attributes']['oldprice'] = this.oldprice;
-    data['attributes']['desc'] = this.desc;
-    data['attributes']['brand'] = this.brand;
-    data['attributes']['createdAt'] = this.createdAt;
-    data['attributes']['updatedAt'] = this.updatedAt;
-    data['attributes']['thumb'] = this.thumb;
-    data['attributes']['secoundimg'] = this.secoundimg;
-    data['attributes']['thourdimg'] = this.thourdimg;
-    data['attributes']['quantity'] = this.quantity;
+    data['id'] = this.id;
+    data['name'] = this.name;
+    data['stars'] = this.stars;
+    data['price'] = this.price;
+    data['oldprice'] = this.oldprice;
+    data['desc'] = this.desc;
+    data['brand'] = this.brand;
+    data['createdAt'] = this.createdAt;
+    data['updatedAt'] = this.updatedAt;
+    data['thumb'] = this.thumb;
+    data['secoundimg'] = this.secoundimg;
+    data['thourdimg'] = this.thourdimg;
+    data['quantity'] = this.quantity;
     if (this.categories != null) {
-      data['attributes']['categories'] = this.categories!.toJson();
+      data['categories'] = this.categories!.toJson();
     }
     return data;
   }

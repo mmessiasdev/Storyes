@@ -26,18 +26,13 @@ class Stories extends StatelessWidget {
                 future: imageController.fetchProductsList(),
                 builder: (context, snapshot) {
                   return ListView.builder(
-                    itemCount: snapshot.data?.length ?? 2,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: snapshot.data?.length ?? 1,
                     itemBuilder: (context, index) {
-                      var renders = snapshot.data?[index];
+                      var renders = snapshot.data![index];
                       print(renders);
-                      return Container(
-                        height: 50,
-                        width: double.infinity,
-                        color: Colors.black38,
-                        child: Text(
-                          '${renders?.name}',
-                          style: TextStyle(fontSize: 15),
-                        ),
+                      return Circle(
+                        url: '${renders.thumb}',
                       );
                     },
                   );
