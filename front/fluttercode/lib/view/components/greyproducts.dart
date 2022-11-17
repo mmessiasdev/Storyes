@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttercode/view/components/widgets/textsdefault.dart';
+
+import '../widgets/textsdefault.dart';
 
 class ProductsFy extends StatelessWidget {
   ProductsFy(
@@ -38,11 +40,16 @@ class ProductsFy extends StatelessWidget {
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(0),
                     ),
-                    child: SizedBox(
+                    child: Container(
+                      color: Colors.grey,
                       height: 128,
                       width: 72,
-                      child: Image.network(
-                        img,
+                      child: Image(
+                        image: CachedNetworkImageProvider(
+                          img,
+                          maxHeight: 128,
+                          maxWidth: 72,
+                        ),
                         fit: BoxFit.cover,
                       ),
                     ),

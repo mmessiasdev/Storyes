@@ -2,10 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:fluttercode/view/components/widgets/textsdefault.dart';
+import 'package:fluttercode/view/homepage.dart';
+import 'package:fluttercode/view/widgets/textsdefault.dart';
 
 class Header extends StatelessWidget {
-  const Header({Key? key}) : super(key: key);
+  Header({Key? key, required this.widget, required this.icon})
+      : super(key: key);
+  final Widget widget;
+  final Widget icon;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,15 @@ class Header extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(Icons.menu_rounded),
+          GestureDetector(
+            onTap: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => widget,
+              ),
+            ),
+            child: icon,
+          ),
           PrimaryText(
             text: 'Storyes',
           ),

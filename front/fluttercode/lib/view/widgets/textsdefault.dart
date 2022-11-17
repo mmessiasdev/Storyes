@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,11 +17,16 @@ class PrimaryText extends StatelessWidget {
 }
 
 class SecundaryText extends StatelessWidget {
-  SecundaryText({required this.text, required this.size, required this.align});
+  SecundaryText(
+      {required this.text,
+      required this.size,
+      required this.align,
+      required this.color});
 
   String text;
   double size;
   TextAlign align;
+  Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,7 @@ class SecundaryText extends StatelessWidget {
       child: Text(text,
           textAlign: align,
           style: GoogleFonts.montserrat(
-              fontSize: size, fontWeight: FontWeight.w500)),
+              fontSize: size, fontWeight: FontWeight.w500, color: color)),
     );
   }
 }

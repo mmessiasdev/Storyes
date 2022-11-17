@@ -1,8 +1,10 @@
 import 'dart:convert';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttercode/view/components/widgets/textsdefault.dart';
 import 'package:http/http.dart' as http;
+
+import '../widgets/textsdefault.dart';
 
 class Products extends StatelessWidget {
   Products(
@@ -30,10 +32,15 @@ class Products extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Container(
-                height: 142,
-                width: 80,
-                child: Image.network(
-                  img,
+                color: Colors.grey,
+                height: 128,
+                width: 72,
+                child: Image(
+                  image: CachedNetworkImageProvider(
+                    img,
+                    maxHeight: 128,
+                    maxWidth: 72,
+                  ),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -65,6 +72,7 @@ class Products extends StatelessWidget {
                           text: 'de ${oldPrice} R\$',
                           size: 13,
                           align: TextAlign.end,
+                          color: Colors.black,
                         ),
                         ThourdText(
                           text: 'por ${price} R\$',

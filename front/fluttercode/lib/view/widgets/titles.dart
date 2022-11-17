@@ -1,7 +1,7 @@
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttercode/view/components/widgets/textsdefault.dart';
+import 'package:fluttercode/view/widgets/textsdefault.dart';
 
 class LateralTitle extends StatelessWidget {
   LateralTitle({required this.title});
