@@ -1,3 +1,5 @@
+// flutter run -d edge --web-renderer html
+
 import 'package:flutter/material.dart';
 import 'package:fluttercode/view/homepage.dart';
 import 'package:flutter/material.dart';

@@ -17,7 +17,6 @@ class ProductPage extends StatefulWidget {
       required this.brand,
       required this.oldprice,
       required this.price,
-      required this.id,
       required this.thumb,
       required this.secoungimage,
       required this.thirdimage,
@@ -33,7 +32,6 @@ class ProductPage extends StatefulWidget {
   String thirdimage;
   String quantity;
   String name;
-  int id;
 
   @override
   State<ProductPage> createState() => _ProductPageState();

@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:fluttercode/model/products.dart';
+import 'package:fluttercode/repository/products.dart';
 import 'package:fluttercode/view/components/products.dart';
 import 'package:fluttercode/view/product.dart';
 import 'package:fluttercode/view/widgets/titles.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class First extends StatelessWidget {
-  const First({Key? key}) : super(key: key);
+import '../../../controller/products.dart';
 
-  Future<List> fetch() async {
-    var url = Uri.parse('http://localhost:1337/api/products/?populate=*');
-    var response = await http.get(url);
-    var jsonResponse = jsonDecode(response.body);
-    var itemCount = jsonResponse["data"];
-    return itemCount;
-  }
+class First extends StatelessWidget {
+  First({Key? key}) : super(key: key);
+  var fetchProducts = ProductsController(ProductsRepository());
 
   @override
   Widget build(BuildContext context) {
@@ -25,35 +22,37 @@ class First extends StatelessWidget {
         LateralTitle(title: 'Populares'),
         SizedBox(
           height: 150,
-          child: FutureBuilder<List>(
-              future: fetch(),
+          child: FutureBuilder<List<Attributes>>(
+              future: fetchProducts.fetchProductsList(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   return ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
-                      var fetchProduct = snapshot.data![index];
-                      var url = "http://localhost:1337";
-                      if (fetchProduct["attributes"]["name"] != null) {
+                      var renders = snapshot.data![index];
+                      if (renders != null) {
                         return GestureDetector(
                           child: Products(
-                            img: fetchProduct["attributes"]["secoundimg"]
-                                .toString(),
-                            title:
-                                fetchProduct["attributes"]["name"].toString(),
-                            desc: fetchProduct["attributes"]["desc"].toString(),
-                            price:
-                                fetchProduct["attributes"]["price"].toString(),
-                            oldPrice: fetchProduct["attributes"]["oldprice"]
-                                .toString(),
+                            img: renders.thumb.toString(),
+                            title: renders.name.toString(),
+                            desc: renders.desc.toString(),
+                            price: renders.price.toString(),
+                            oldPrice: renders.oldprice.toString(),
                           ),
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => ProductPage(
-                                product: fetchProduct,
-                                id: fetchProduct["id"],
+                                thumb: renders.thumb.toString(),
+                                secoungimage: renders.secoundimg.toString(),
+                                thirdimage: renders.thourdimg.toString(),
+                                price: renders.price.toString(),
+                                oldprice: renders.oldprice.toString(),
+                                name: renders.name.toString(),
+                                desc: renders.desc.toString(),
+                                quantity: renders.quantity.toString(),
+                                brand: renders.brand.toString(),
                               ),
                             ),
                           ),

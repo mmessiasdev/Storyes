@@ -46,21 +46,23 @@ class ForYou extends StatelessWidget {
                           if (renders != null) {
                             return GestureDetector(
                               child: ProductsFy(
-                                  img: renders.thumb
-                                      .toString(),
-                                  title: renders.name
-                                      .toString(),
-                                  desc: renders.desc
-                                      .toString(),
-                                  price: renders.price
-                                      .toString()),
+                                  img: renders.thumb.toString(),
+                                  title: renders.name.toString(),
+                                  desc: renders.desc.toString(),
+                                  price: renders.price.toString()),
                               onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => ProductPage(
                                     thumb: renders.thumb.toString(),
                                     secoungimage: renders.secoundimg.toString(),
-                                    id: ,
+                                    thirdimage: renders.thourdimg.toString(),
+                                    price: renders.price.toString(),
+                                    oldprice: renders.oldprice.toString(),
+                                    name: renders.name.toString(),
+                                    desc: renders.desc.toString(),
+                                    quantity: renders.quantity.toString(),
+                                    brand: renders.brand.toString(),
                                   ),
                                 ),
                               ),
