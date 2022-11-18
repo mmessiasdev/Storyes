@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttercode/controller/products.dart';
 import 'package:fluttercode/model/products.dart';
 import 'package:fluttercode/repository/products.dart';
 import 'package:fluttercode/view/components/greyproducts.dart';
 import 'package:fluttercode/view/widgets/titles.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import '../../product.dart';
-import 'firstproducts.dart';
 
 class ForYou extends StatelessWidget {
   ForYou({Key? key}) : super(key: key);

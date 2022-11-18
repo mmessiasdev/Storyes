@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttercode/model/products.dart';
 import 'package:fluttercode/repository/products.dart';
 import 'package:fluttercode/view/components/products.dart';
 import 'package:fluttercode/view/product.dart';
 import 'package:fluttercode/view/widgets/titles.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 
 import '../../../controller/products.dart';
 

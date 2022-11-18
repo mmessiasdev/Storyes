@@ -23,7 +23,7 @@ class ProductsRepository implements Repositories {
     var body = jsonDecode(response.body);
     // parse
     var itemCount = body["data"];
-    print(itemCount);
+    // print(itemCount);
     for (var i = 0; i < itemCount.length; i++) {
       listItens.add(Attributes.fromJson(itemCount[i]));
     }
