@@ -1,10 +1,10 @@
-import './apresentation.css';
+import './style.css';
 import React, { useEffect, useState } from "react";
 import { DEFAULTPRODUCTS } from "../../../config";
 import MainProduct from '../functions/mainproduct';
 
 
-const Apresentation = () => {
+const FirtProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -13,23 +13,18 @@ const Apresentation = () => {
         })
     })
 
-
-
-
-
     return (
         <>
             <div className="apresentation" id="apresentation">
                 <div className="title">
                     <h2>Popular</h2>
                 </div>
-             
+
                 <div className="list">
                     {products.map((resProd) => {
                         return (
                             <>
-                                {/* <img scr={resProd.attributes.thumb.data.attributes} /> */}
-                                <MainProduct key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} img={resProd.attributes.thumb.data.attributes.url}/>
+                                <MainProduct id={resProd.id} key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} img={resProd.attributes.thumb} />
                             </>
                         )
                     })}
@@ -39,4 +34,4 @@ const Apresentation = () => {
     )
 }
 
-export default Apresentation;
+export default FirtProducts;

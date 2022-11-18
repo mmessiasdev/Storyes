@@ -61,12 +61,12 @@
 .info h2{
     color: black;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .info h4{
     margin-top: 10px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     font-style:oblique;
 }
 .info h3{

@@ -8,7 +8,7 @@ const ForYou = () => {
 
     useEffect(() => {
         fetch(DEFAULTPRODUCTS).then((res) => res.json()).then(res => {
-            console.log(res.data)
+            console.log(res.data);
             setProducts(res.data);
         })
     })
@@ -22,7 +22,7 @@ const ForYou = () => {
                 </div>
                 <div className="list">
                     {products.map((resProd) =>
-                        <MainProduct key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} img={resProd.attributes.thumb.data.attributes.url}/>
+                        <MainProduct key={resProd.id} {...resProd} name={resProd.attributes.name} desc={resProd.attributes.desc} oldPrice={resProd.attributes.oldprice} price={resProd.attributes.price} img={resProd.attributes.thumb}/>
                     )}
                 </div>
             </div>
@@ -30,22 +30,5 @@ const ForYou = () => {
 
     )
 }
-
-{/* <div>
-{estate.attributes.thumb.data ? (
-    estate.attributes.thumb.data.map((pic) => (
-        <img
-            src={`http://localhost:1337${pic.attributes.url}`}
-            alt="img"
-            key={pic.attributes.id}
-        />
-    ))
-) : (
-    <img
-        src={`http://localhost:1337${estate.attributes.thumb.data.attributes.url}`}
-        alt="img"
-    />
-)}
-</div> */}
 
 export default ForYou;

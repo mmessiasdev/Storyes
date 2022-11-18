@@ -61,12 +61,12 @@
 }
 .info h2 {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .info h4 {
     margin-top: 10px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     font-style: oblique;
 }
 .info * {

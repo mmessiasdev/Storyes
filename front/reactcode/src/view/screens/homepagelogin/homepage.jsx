@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import AboutUs from "../../componnents/aboutus/aboutus";
-import Apresentation from "../../componnents/apresentation/apresentation";
 import Footer from "../../componnents/footer/footer";
 import ForYou from "../../componnents/foryou/foryou";
 import SideBar from "../../componnents/sidebar/sidebar";
@@ -11,15 +10,9 @@ import { BiLogOut } from 'react-icons/bi';
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-
-// http://localhost:1337/api/products
-// http://localhost:1337/api/auth/local
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYzNjIxOTE1LCJleHAiOjE2NjYyMTM5MTV9.o7snA8KbWVnpDt3uI_uZ2R-h9-rP30yKRTKd-uHsQUg
-
+import FirtProducts from "../../componnents/firstproducts";
 
 const HomePage = () => {
-    const [showElement, setShowElement] = useState(false)
-    const showOrHide = () => setShowElement(true);
     return (
         <>
             <div className="homepage">
@@ -30,13 +23,10 @@ const HomePage = () => {
                             <div className="cont"></div>
                         </div>
                         <div className="account">
-
                             <Link to="/auth" className="link">
                                 <Button className="buttonSecundary" variant="contained" type="submit">
-
                                     <BiLogOut className="icon" />
                                     <h2>Sair</h2>
-
                                 </Button>
                             </Link>
                         </div>
@@ -45,7 +35,7 @@ const HomePage = () => {
                 <div className="centralpage">
                     <div className="left">
                         <Stories />
-                        <Apresentation />
+                        <FirtProducts/>
                         <ForYou />
                         <AboutUs />
                     </div>

@@ -26,7 +26,7 @@ function RoutesPage() {
                     <Route exact path="/" element={<PrivateRoute />}>
                         <Route exact path='/auth/homepage' element={<HomePageLogin />} />
                         <Route exact path='/auth/addproduct' element={<AddP />} />
-                        <Route exact path='/auth/product' element={<Product />} />
+                        <Route exact path="/auth/product/:id" element={<Product />} />
                     </Route>    
                     <Route path="/auth" element={<Login/>} />
                     <Route path="/register" element={<Register/>} />

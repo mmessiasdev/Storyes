@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GENERALURL } from "../../../../config";
 
-const MainProduct = ({ name, desc, oldPrice, price, img }) => {
+const MainProduct = ({ name, desc, oldPrice, price, img, id }) => {
     return (
         <>
-            <Link to="/auth/product" className="link" >
+            <Link to={`/auth/product/${id}`} className="link" >
                 <div className="product">
                     <div className="photo">
-                        <img src={GENERALURL + img}/>
+                        <img src={img}/>    
                     </div>
                     <div className="info">
                         <div className="text">
@@ -21,10 +20,8 @@ const MainProduct = ({ name, desc, oldPrice, price, img }) => {
                         </div>
                     </div>
                 </div>
-
             </Link>
         </>
-
     )
 }
 

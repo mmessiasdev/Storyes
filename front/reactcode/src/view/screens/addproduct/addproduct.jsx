@@ -1,10 +1,9 @@
 import { TextField } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import './addproduct.css';
-import { Link, useNavigate, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import logo from "../../assets/logo.png";
-import axios from "axios";
 
 
 
@@ -20,17 +19,11 @@ const AddP = () => {
     const [newPrice, setNewPrice] = useState("");
     const [newBrand, setNewBrand] = useState("");
     const [newQuantity, setNewQuantity] = useState("");
-    const [newThumb, setNewThumb] = useState("");
-
-
-    const [files, setFiles] = useState()
-
 
 
     useEffect(() => {
         update();
-        updateImg();
-    }, []);
+      }, []);
 
 
     function update() {
@@ -40,13 +33,7 @@ const AddP = () => {
                 setProduct(product.data);
             })
     }
-    function updateImg() {
-        fetch('http://localhost:1337/api/upload/')
-            .then(res => res.json())
-            .then(product => {
-                setProduct(product.data);
-            })
-    }
+
 
 
     function addProduct(e) {
@@ -57,7 +44,6 @@ const AddP = () => {
         let brand = newBrand;
         let oldprice = newOldPrice;
         let price = newPrice;
-        let thumb = newThumb;
         let quantity = newQuantity;
         let body = {
             data: {
@@ -67,7 +53,6 @@ const AddP = () => {
                 quantity,
                 price,
                 oldprice,
-                thumb
             }
         };
 
@@ -89,18 +74,6 @@ const AddP = () => {
             });
 
 
-            fetch('http://localhost:1337/api/upload/', {
-                method: "POST",
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            })
-                .then(() => {
-                    setNewThumb("");
-                    update();
-                });
-            
 
     }
 
@@ -131,8 +104,7 @@ const AddP = () => {
                                 <TextField value={newPrice} onChange={e => setNewPrice(e.currentTarget.value)} className="input" id="price" label="Preço" type="text" name="price" variant="filled" required />
                                 <TextField value={newBrand} onChange={e => setNewBrand(e.currentTarget.value)} className="input" id="brand" label="Marca do Porduto" type="text" name="brand" variant="filled" required />
                                 <TextField value={newQuantity} onChange={e => setNewQuantity(e.currentTarget.value)} className="input" id="quantity" label="Quatidade de produtos" type="text" name="quantity" variant="filled" required />
-                                <input value={newThumb} onChange={e => setNewThumb(e.currentTarget.value)} type="file" id="thumb" name="thumb"/>
-                                
+
                             </div>
 
                             <Button className="registerbutton" type="submit">
