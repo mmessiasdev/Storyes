@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css';
 
-const DivProduct = (name) => {
+const ProductDiv = (name) => {
 
     return (
         <>
@@ -14,4 +14,4 @@ const DivProduct = (name) => {
     )
 }
 
-export default DivProduct;
+export default ProductDiv;

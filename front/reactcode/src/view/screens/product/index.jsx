@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ForYou from "../../componnents/foryou/foryou";
-import Header from "../../componnents/header/header";
-import DivProduct from "../../componnents/functions/screenproduct";
-import Recomended from "../../componnents/recomendedproducts";
+import Header from "../../componnents/containers/header/header";
 import './style.css';
 import { DEFAULTPRODUCTS } from "../../../config";
 import { useParams } from "react-router-dom";
@@ -16,8 +13,8 @@ const Product = () => {
 
         const res = await fetch(url)
         const data = await res.json();
-        setProduct(data.attributes);
-        console.log(data);
+        setProduct(data.data.attributes);
+        console.log(data.data.attributes);
     }
 
     useEffect(() => {
@@ -27,11 +24,12 @@ const Product = () => {
     }, [])
 
     return <>
+        <Header />
         <div className="productpage">
             {product &&
                 <>
                     <h1>
-                        {product.attributes.desc} teste
+                        {product.desc} teste
 
                     </h1>
                 </>

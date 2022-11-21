@@ -1,12 +1,12 @@
 import React from "react";
-import AboutUs from "../../componnents/aboutus/aboutus";
-import FirtProducts from "../../componnents/firstproducts";
-import Footer from "../../componnents/footer/footer";
-import ForYou from "../../componnents/foryou/foryou";
-import Header from "../../componnents/header/header";
-import SideBar from "../../componnents/sidebar/sidebar";
-import Stories from "../../componnents/stories/stories";
-import './homepage.css';
+import FirtProducts from "../../componnents/containers/firstproducts/firstproducts";
+import Footer from "../../componnents/containers/footer/footer";
+import ForYou from "../../componnents/containers/foryou/foryou";
+import Header from "../../componnents/containers/header/header";
+import SideBar from "../../componnents/containers/sidebar/sidebar";
+import Stories from "../../componnents/containers/stories/stories";
+import AboutUs from "../../componnents/containers/aboutus/aboutus";
+import './style.css';
 
 
 function HomePage () {

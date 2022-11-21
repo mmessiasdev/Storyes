@@ -1,8 +1,8 @@
 import React from "react";
-import './header.css';
+import './style.css';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFillPersonFill } from 'react-icons/bs';
-import logo from "../../assets/logo.png";
+import logo from "../../../assets/logo.png";
 import { Link, useNavigate, redirect } from "react-router-dom";
 import { Button } from "@mui/material";
 

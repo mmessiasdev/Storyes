@@ -1,5 +1,5 @@
 import React from "react";
-import MainProduct from "../functions/mainproduct";
+import MainProduct from "../mainproduct/mainproduct";
 import './style.css';
 
 const Recomended = () => {

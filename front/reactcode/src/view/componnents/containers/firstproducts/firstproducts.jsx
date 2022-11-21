@@ -1,7 +1,7 @@
 import './style.css';
 import React, { useEffect, useState } from "react";
-import { DEFAULTPRODUCTS } from "../../../config";
-import MainProduct from '../functions/mainproduct';
+import { DEFAULTPRODUCTS } from '../../../../config';
+import MainProduct from '../../widgets/mainproduct/mainproduct';
 
 
 const FirtProducts = () => {

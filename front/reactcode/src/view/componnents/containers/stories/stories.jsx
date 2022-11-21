@@ -1,5 +1,5 @@
 import React from "react";
-import './stories.css';
+import './style.css';
 
 const Stories = () => {
     return (

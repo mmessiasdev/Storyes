@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import './foryou.css'
-import { DEFAULTPRODUCTS } from "../../../config";
-import MainProduct from "../functions/mainproduct";
+import './style.css'
+import { DEFAULTPRODUCTS } from "../../../../config";
+import MainProduct from "../../widgets/mainproduct/mainproduct";
 
 const ForYou = () => {
     const [products, setProducts] = useState([]);   

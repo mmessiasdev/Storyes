@@ -1,6 +1,6 @@
 import React from "react";
-import './aboutus.css';
-import Perfil from '../../assets/perfil.png'
+import './style.css';
+import Perfil from '../../../assets/perfil.png'
 
 const AboutUs = () => {
     return (

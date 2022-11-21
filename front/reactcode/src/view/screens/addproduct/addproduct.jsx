@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import './addproduct.css';
+import './style.css';
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import logo from "../../assets/logo.png";

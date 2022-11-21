@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import RoutesPage from './controller/routes';
-import './view/componnents/universal.css'
+import './view/componnents/universal.css';
+import RoutesPage from './controller/routes/routes';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

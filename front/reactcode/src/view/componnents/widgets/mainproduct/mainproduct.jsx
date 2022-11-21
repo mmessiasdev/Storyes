@@ -1,10 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import AuthContext from "../../../../controller/auth/authcontext";
 
 const MainProduct = ({ name, desc, oldPrice, price, img, id }) => {
+
     return (
         <>
-            <Link to={`/auth/product/${id}`} className="link" >
+            <Link to={`/auth/product/${id}`} className="link">
                 <div className="product">
                     <div className="photo">
                         <img src={img}/>    
