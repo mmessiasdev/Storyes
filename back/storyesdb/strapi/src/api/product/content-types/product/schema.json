@@ -62,8 +62,7 @@
     },
     "quantity": {
       "type": "integer",
-      "required": true,
-      "default": 1
+      "default": 0
     }
   }
 }
