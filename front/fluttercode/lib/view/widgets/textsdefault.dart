@@ -11,8 +11,11 @@ class PrimaryText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-        style:
-            GoogleFonts.montserrat(fontSize: 45, fontWeight: FontWeight.w700));
+        style: GoogleFonts.montserrat(
+            color: Colors.black,
+            decoration: TextDecoration.none,
+            fontSize: 45,
+            fontWeight: FontWeight.w700));
   }
 }
 
@@ -35,7 +38,10 @@ class SecundaryText extends StatelessWidget {
       child: Text(text,
           textAlign: align,
           style: GoogleFonts.montserrat(
-              fontSize: size, fontWeight: FontWeight.w500, color: color)),
+              decoration: TextDecoration.none,
+              fontSize: size,
+              fontWeight: FontWeight.w500,
+              color: color)),
     );
   }
 }

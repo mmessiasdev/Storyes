@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:fluttercode/view/product.dart';
+import 'package:fluttercode/view/widgets/textsdefault.dart';
 
 import 'containers/homepage/firstproducts.dart';
 import 'containers/homepage/foryou.dart';
@@ -19,7 +20,11 @@ class HomePage extends StatelessWidget {
         children: [
           Column(
             children: [
-              Header(widget: HomePage(), icon: Icon(Icons.menu)),
+              Header(
+                widget: HomePage(),
+                icon: Icon(Icons.menu),
+                title: PrimaryText(text: 'Storyes'),
+              ),
               Stories(),
               First(),
               ForYou(),

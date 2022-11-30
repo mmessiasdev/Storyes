@@ -30,7 +30,7 @@ class ProductPage extends StatefulWidget {
   String thumb;
   String secoungimage;
   String thirdimage;
-  String quantity;
+  int quantity;
   String name;
 
   @override
@@ -40,6 +40,7 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
+    var quant = widget.quantity;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         body: ListView(
@@ -47,6 +48,7 @@ class _ProductPageState extends State<ProductPage> {
         Header(
           icon: Icon(Icons.arrow_back_ios_new_rounded),
           widget: HomePage(),
+          title: PrimaryText(text: 'Storyes'),
         ),
         Column(
           children: [
@@ -121,7 +123,15 @@ class _ProductPageState extends State<ProductPage> {
                               size: 30,
                             ),
                           )),
-                      onTap: () {}),
+                      onTap: () {
+                        setState(() {
+                          if (widget.quantity > 0) {
+                            widget.quantity--;
+                          } else {
+                            print('Estoque indisponível.');
+                          }
+                        });
+                      }),
                 ),
               ]),
             ),
@@ -150,19 +160,6 @@ class _ProductPageState extends State<ProductPage> {
                         )),
                       ),
                     ),
-                    Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: Positioned(
-                          child: GestureDetector(
-                            child: Container(
-                              width: size.width * .15,
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              child: Center(
-                                  child: Icon(Icons.favorite_border,
-                                      color: Colors.red)),
-                            ),
-                          ),
-                        )),
                   ],
                 ),
               ),

@@ -56,7 +56,7 @@ class ForYou extends StatelessWidget {
                                     oldprice: renders.oldprice.toString(),
                                     name: renders.name.toString(),
                                     desc: renders.desc.toString(),
-                                    quantity: renders.quantity.toString(),
+                                    quantity: renders.quantity!,
                                     brand: renders.brand.toString(),
                                   ),
                                 ),
@@ -74,7 +74,7 @@ class ForYou extends StatelessWidget {
                         },
                       );
                     }
-                    return SizedBox();
+                    return const SizedBox();
                   }),
             ),
           ),

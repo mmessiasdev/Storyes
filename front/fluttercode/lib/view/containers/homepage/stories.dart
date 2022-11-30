@@ -38,9 +38,7 @@ class Stories extends StatelessWidget {
                       },
                     );
                   }
-                  return Container(
-                    color: Colors.white,
-                  );
+                  return SizedBox();
                 },
               ),
             ),

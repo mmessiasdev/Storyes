@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 
 class ProductsRepository implements Repositories {
   String urlData = "http://localhost:1337/api";
+  late Attributes product;
 
   @override
   Future<String> deleteProducts() {
@@ -43,8 +44,19 @@ class ProductsRepository implements Repositories {
   }
 
   @override
-  Future<String> putProducts() {
+  Future<String> putProducts() async {
     // TODO: implement putProducts
-    throw UnimplementedError();
+    var url = Uri.parse('$urlData/products/${product.id}?populate=*');
+    String resData = '';
+    await http.put(url, body: {
+      'quantity': (product.quantity!).toString(),
+    }).then(
+      (value) {
+        Map<String, dynamic> result = json.decode(value.body);
+        print(result);
+        return resData = result['quantity'];
+      },
+    );
+    return resData;
   }
 }
