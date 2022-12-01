@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:fluttercode/view/login.dart';
 
 import 'package:fluttercode/view/product.dart';
 import 'package:fluttercode/view/widgets/textsdefault.dart';
@@ -21,7 +22,7 @@ class HomePage extends StatelessWidget {
           Column(
             children: [
               Header(
-                widget: HomePage(),
+                widget: Login(),
                 icon: Icon(Icons.menu),
                 title: PrimaryText(text: 'Storyes'),
               ),

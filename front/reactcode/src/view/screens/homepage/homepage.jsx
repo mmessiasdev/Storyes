@@ -9,7 +9,7 @@ import AboutUs from "../../componnents/containers/aboutus/aboutus";
 import './style.css';
 
 
-function HomePage () {
+function HomePage() {
 
 
     return (
@@ -21,15 +21,15 @@ function HomePage () {
                 <div className="centralpage">
                     <div className="left">
                         <Stories />
-                        <FirtProducts/>
+                        <FirtProducts />
                         <ForYou />
-                        <AboutUs />
                     </div>
                     <div className="right">
                         <SideBar />
                     </div>
                 </div>
                 <div>
+                    <AboutUs />
                     <Footer />
                 </div>
             </div>

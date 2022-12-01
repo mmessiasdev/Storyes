@@ -61,7 +61,9 @@ class ThourdText extends StatelessWidget {
           maxLines: 2,
           textAlign: align,
           style: GoogleFonts.montserrat(
-              fontSize: size, fontWeight: FontWeight.w600)),
+              color: Colors.black,
+              fontSize: size,
+              fontWeight: FontWeight.w600)),
     );
   }
 }

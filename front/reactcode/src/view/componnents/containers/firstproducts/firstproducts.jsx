@@ -13,13 +13,13 @@ const FirtProducts = () => {
         })
     })
 
+
     return (
         <>
             <div className="apresentation" id="apresentation">
                 <div className="title">
                     <h2>Popular</h2>
                 </div>
-
                 <div className="list">
                     {products.map((resProd) => {
                         return (
@@ -33,5 +33,6 @@ const FirtProducts = () => {
         </>
     )
 }
+
 
 export default FirtProducts;

@@ -18,8 +18,6 @@ import authApi from "../../../controller/auth/authapi";
 const HomePageAuth = () => {
     const history = useNavigate();
     const { setIsAuthenticated } = useContext(AuthContext);
-    
-   
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -30,6 +28,8 @@ const HomePageAuth = () => {
             console.log(error);
         }
     }
+
+    
     return (
         <>
             <div className="homepage">
