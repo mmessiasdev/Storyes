@@ -4,13 +4,15 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PrimaryText extends StatelessWidget {
-  PrimaryText({required this.text});
+  PrimaryText({required this.text, required this.align});
 
   String text;
+  TextAlign align;
 
   @override
   Widget build(BuildContext context) {
     return Text(text,
+        textAlign: align,
         style: GoogleFonts.montserrat(
             color: Colors.black,
             decoration: TextDecoration.none,
@@ -61,6 +63,7 @@ class ThourdText extends StatelessWidget {
           maxLines: 2,
           textAlign: align,
           style: GoogleFonts.montserrat(
+              decoration: TextDecoration.none,
               color: Colors.black,
               fontSize: size,
               fontWeight: FontWeight.w600)),

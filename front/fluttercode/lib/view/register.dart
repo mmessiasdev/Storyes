@@ -84,17 +84,42 @@ class _RegistrationState extends State<Registration> {
                   onPressed: () {
                     Cadastrar();
                   },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.70,
-                    color: Colors.white,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ThourdText(
-                        text: 'Registrar-se',
-                        size: 20,
-                        align: TextAlign.center,
+                  child: Column(
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.70,
+                        color: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ThourdText(
+                            text: 'Registrar-se',
+                            size: 20,
+                            align: TextAlign.center,
+                          ),
+                        ),
                       ),
-                    ),
+                      FractionallySizedBox(
+                        widthFactor: 0.75,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: ((context) => const Login()),
+                              ),
+                            );
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ThourdText(
+                              align: TextAlign.center,
+                              size: 15,
+                              text: 'Já tenho conta',
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

@@ -85,19 +85,19 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: FractionallySizedBox(
-                          widthFactor: 0.75,
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: ((context) => Registration()),
-                                ),
-                              );
-                            },
+                      FractionallySizedBox(
+                        widthFactor: 0.75,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: ((context) => Registration()),
+                              ),
+                            );
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
                             child: ThourdText(
                               align: TextAlign.center,
                               size: 15,

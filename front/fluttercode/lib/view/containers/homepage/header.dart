@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttercode/view/search.dart';
 
 class Header extends StatelessWidget {
   Header(
@@ -25,7 +26,15 @@ class Header extends StatelessWidget {
             child: icon,
           ),
           title,
-          Icon(Icons.search)
+          GestureDetector(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Search(),
+              ),
+            ),
+            child: Icon(Icons.search),
+          ),
         ],
       ),
     );

@@ -48,7 +48,10 @@ class _ProductPageState extends State<ProductPage> {
         Header(
           icon: Icon(Icons.arrow_back_ios_new_rounded),
           widget: HomePage(),
-          title: PrimaryText(text: 'Storyes'),
+          title: PrimaryText(
+            text: 'Storyes',
+            align: TextAlign.center,
+          ),
         ),
         Column(
           children: [
