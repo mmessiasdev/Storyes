@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "addresses",
+  "info": {
+    "singularName": "address",
+    "pluralName": "addresses",
+    "displayName": "Address",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "addresses"
+    },
+    "completename": {
+      "type": "text"
+    },
+    "cep": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "neighborhood": {
+      "type": "string"
+    },
+    "road": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "complemente": {
+      "type": "string"
+    },
+    "cellnumber": {
+      "type": "string"
+    }
+  }
+}
